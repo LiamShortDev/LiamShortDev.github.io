@@ -1,4 +1,4 @@
-// create html for each project in the project json
+// Load and render projects
 fetch('projects.json')
   .then(response => response.json())
   .then(data => {
@@ -15,6 +15,7 @@ fetch('projects.json')
         </div>
       `;
 
+      // Support multiple categories per project
       if (Array.isArray(project.category)) {
         project.category.forEach(category => {
           const shelf = document.querySelector(`#${category} .project-grid`);
@@ -25,35 +26,41 @@ fetch('projects.json')
         if (shelf) shelf.appendChild(card);
       }
     });
+
+    // After cards are added, set up mobile tap behavior
+    setupMobileTapOverlay();
   })
   .catch(err => console.error("Failed to load projects:", err));
 
 
-  // click to view description for mobile accessibility 
-document.addEventListener('DOMContentLoaded', () => {
+// Tap-to-hover for mobile devices
+function setupMobileTapOverlay() {
   const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
   if (isTouchDevice) {
+    let lastTapped = null;
+
     document.querySelectorAll('.project-card').forEach(card => {
-      card.addEventListener('click', e => {
-        if (!card.classList.contains('tapped')) {
-          e.preventDefault(); // stop the link from opening
-          // remove 'tapped' from other cards
+      card.addEventListener('click', (e) => {
+        // First tap: show overlay only
+        if (lastTapped !== card) {
+          e.preventDefault(); // block navigation
           document.querySelectorAll('.project-card.tapped').forEach(c => c.classList.remove('tapped'));
-          // add it to this one
           card.classList.add('tapped');
+          lastTapped = card;
         } else {
-          // second tap = follow link
-          window.location = card.href;
+          // Second tap: follow the link
+          lastTapped = null;
         }
       });
     });
 
-    // Optional: remove 'tapped' if you tap outside a card
-    document.addEventListener('click', e => {
+    // Tap outside to cancel tap state
+    document.addEventListener('click', (e) => {
       if (!e.target.closest('.project-card')) {
         document.querySelectorAll('.project-card.tapped').forEach(c => c.classList.remove('tapped'));
+        lastTapped = null;
       }
     });
   }
-});
+}
