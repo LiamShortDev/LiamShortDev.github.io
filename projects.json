@@ -1,28 +1,28 @@
 [
   {
     "title": "Chess Robot",
-    "category": "highlighted",
+    "category": ["highlighted", "engineering"],
     "description": "ESP32-controlled robot that moves chess pieces magnetically.",
     "image": "images/chess-thumb.jpg",
     "link": "project-chess.html"
   },
   {
     "title": "3D Renderer",
-    "category": "highlighted",
+    "category": ["cs"],
     "description": "C# 3D engine using matrix math — rendered without projection.",
     "image": "images/renderer-thumb.jpg",
     "link": "project-renderer.html"
   },
   {
     "title": "Cube Trainer",
-    "category": "cs",
+    "category": ["highlighted", "cs"],
     "description": "Timer and algorithm tracker for Rubik’s Cube practice.",
     "image": "images/cube-thumb.jpg",
     "link": "project-cubetrainer.html"
   },
   {
     "title": "Multiplexer Chess Grid",
-    "category": "engineering",
+    "category": ["engineering"],
     "description": "8x8 reed switch input grid controlled by ESP32.",
     "image": "images/grid-thumb.jpg",
     "link": "project-reedswitch.html"
