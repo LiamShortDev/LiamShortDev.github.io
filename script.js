@@ -13,10 +13,16 @@ fetch('projects.json')
           <p>${project.description}</p>
         </div>
       `;
-      project.category.forEach(category => {
-        const shelf = document.querySelector(`#${category} .project-grid`);
+
+      if (Array.isArray(project.category)) {
+        project.category.forEach(category => {
+          const shelf = document.querySelector(`#${category} .project-grid`);
+          if (shelf) shelf.appendChild(card.cloneNode(true));
+        });
+      } else {
+        const shelf = document.querySelector(`#${project.category} .project-grid`);
         if (shelf) shelf.appendChild(card);
-      })
+      }
     });
   })
   .catch(err => console.error("Failed to load projects:", err));
