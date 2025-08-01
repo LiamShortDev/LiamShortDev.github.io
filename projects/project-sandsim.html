@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sand & Dust Physics Simulator - Liam Short Portfolio</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    main.project-page {
+      max-width: 720px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    ul.tech-stack {
+      list-style: disc;
+      margin-left: 1.5rem;
+    }
+
+    .github-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #007acc;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .github-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <main class="project-page">
+    <h1>Sand & Dust Physics Simulator</h1>
+
+    <section class="section">
+      <h2>Live Demo</h2>
+      <iframe src="./project-sandsim-demo.html" allowfullscreen></iframe>
+    </section>
+
+    <section class="section">
+      <h2>Tech Stack</h2>
+      <ul class="tech-stack">
+        <li>C# (original implementation)</li>
+        <li>JavaScript (HTML version)</li>
+        <li>Canvas 2D Rendering</li>
+        <li>Cellular Automata Physics</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Why I Built This</h2>
+      <p>
+        I’ve always been fascinated by simulation-based games and the beauty of simple systems producing complex behavior. This sandbox started as a challenge to replicate falling sand physics in a C# console app — using characters and colors to simulate material movement. Eventually, I ported it to HTML so it could run on the web and be played anywhere.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Detailed Analysis</h2>
+      <p>
+        The core of the simulation is a grid-based update loop where each cell represents a particle — sand, water, or rock. Sand falls down unless blocked, water flows sideways and falls when it can, and rock is static. Each frame, the grid updates in a predictable order, using simple rules to produce surprisingly organic behavior.
+      </p>
+      <p>
+        In the HTML version, I used the Canvas API to render the grid and JavaScript to handle mouse interaction and real-time updates. Optimizing for performance on larger grids required minimizing DOM operations and tightly controlling redraws.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Challenges Faced</h2>
+      <p>
+        Getting realistic behavior from simple rules took a lot of tweaking — especially with water movement and making sure materials didn’t “clump” unrealistically. Translating it from C# to JavaScript while preserving performance and accuracy also required rethinking how the render loop and input system worked.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Lessons Learned</h2>
+      <p>
+        This project taught me how rewarding emergent systems can be — and how tricky they are to fine-tune. I learned a lot about simulation logic, 2D canvas rendering, and optimizing per-frame updates in web apps.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>If I Did It Again...</h2>
+      <p>
+        I’d love to expand the simulation with fire, smoke, oil, and more reactions. A bigger goal would be adding a UI for custom materials and a saving/loading system to share creations. I might also use WebGL for faster rendering at higher resolutions.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>GitHub Repository</h2>
+      <a href="https://github.com/LiamShortDev/Cellular-Physics-Sandbox" class="github-link" target="_blank">View the Code on GitHub →</a>
+    </section>
+
+    <a href="../index.html" style="display: inline-block; margin-top: 2rem;">← Back to Portfolio</a>
+  </main>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rubik's Cube Solver & Trainer - Liam Short Portfolio</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    main.project-page {
+      max-width: 720px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .showcase-images {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .showcase-images figure {
+      margin: 0;
+    }
+
+    .showcase-images img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .showcase-images figcaption {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 0.3rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .github-link, .demo-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #007acc;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .github-link:hover, .demo-link:hover {
+      text-decoration: underline;
+    }
+
+    ul.tech-stack {
+      list-style: disc;
+      margin-left: 1.5rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="project-page">
+    <h1>Rubik's Cube Solver & Trainer</h1>
+
+    <div class="showcase-images">
+      <figure>
+        <img src="./images/rubiks-cube-image1.jpg" alt="The main menu screen that is shown to the user once logged in">
+        <figcaption>Final build main menu</figcaption>
+      </figure>
+      <figure>
+        <img src="./images/rubiks-cube-image2.jpg" alt="The menu for each stage of solving CFOP">
+        <figcaption>CFOP Solving menu</figcaption>
+      </figure>
+    </div>
+
+    <section class="section">
+      <h2>Tech Stack</h2>
+      <ul class="tech-stack">
+        <li>C#</li>
+        <li>WinForms</li>
+        <li>2D Projection for Cube Visualization</li>
+        <li>SQL Databases</li>
+        <li>Hashing Algorithms (SHA-256)</li>
+        <li>Heuristic, Recursive Shortest-Path Algorithm</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Why I Built This</h2>
+      <p>
+        I’ve been fascinated by Rubik’s cubes for a while — not just solving them quickly, but understanding the logic behind speed-solving methods. So when it came to my A-Level Computer Science project, I saw the perfect opportunity to combine that passion with programming.
+        I approached a friend who’d mentioned wanting to learn how to solve the cube faster, and offered to build a tool that could help. After chatting with them about their struggles and goals, I put together a clear set of targets: the software needed to track solve times, suggest algorithms, and provide meaningful feedback to help them improve.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Detailed Analysis</h2>
+      <p>
+        The application was built using WinForms for the user interface, with an SQL database for storing solve times, CFOP algorithms (both standard and user-defined), and securely hashed login credentials using SHA-256.
+      </p>
+      <p>
+        The core of the trainer is its interactive solver, which accepts a scrambled cube and solves it using the human CFOP method. The solve is broken into four stages, allowing the user to step through and understand each part of the process. To handle the white cross stage efficiently, I implemented a heuristic shortest-path algorithm inspired by A*, which consistently finds near-optimal solutions in a fraction of a second.
+      </p>
+      <p>
+        Users can browse any standard CFOP algorithm or their own added algorithms, with step-by-step visualisation. This helps users both learn when to use each algorithm and become familiar with the Rubik’s Cube notation.
+      </p>
+      <p>
+        I chose a 2D projection to display the cube, calculated using basic trigonometry. While a 3D representation with mouse interaction would have been more intuitive, the 2D model kept the project within scope and intentionally reinforced learning notation — a key skill for more advanced solving methods.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Demo / Video</h2>
+      <a href="https://youtube.com/your-video" target="_blank" class="demo-link" rel="noopener noreferrer">▶️ Watch Demo on YouTube</a>
+    </section>
+
+    <section class="section">
+      <h2>GitHub Repository</h2>
+      <a href="https://github.com/LiamShortDev/project-repo" target="_blank" class="github-link" rel="noopener noreferrer">View the Code on GitHub →</a>
+    </section>
+
+    <section class="section">
+      <h2>Challenges Faced</h2>
+      <p>
+        One of the biggest challenges was building a solver that produced realistic solutions using the CFOP method — not just solving the cube, but solving it in a human-understandable way. Initially, the solver relied on brute force and generated solutions that were far too long to be practical. Adapting a traditional A* algorithm to suit this use case required a lot of experimentation with heuristics to prioritize move efficiency over speed of execution.
+      </p>
+      <p>
+        Another challenge was designing a Rubik’s Cube UI in a 2D environment. Figuring out how to accurately represent the cube’s state visually — and make it intuitive — took time and trial and error, especially when mapping face rotations to button inputs.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Lessons Learned</h2>
+      <p>
+        This project taught me how to balance functionality with usability — not just building something that works, but building something people will actually enjoy using. I gained experience with algorithm optimization, user interface design in WinForms, and working with SQL databases to persist user data securely.
+      </p>
+      <p>
+        I also learned the importance of scoping a project realistically. My initial ideas were too ambitious, and I had to prioritise the features that delivered the most learning value and practical benefit within the available timeframe.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>If I Did It Again...</h2>
+      <p>
+        With more time and experience, I’d implement a full 3D interactive cube using a graphics library to allow users to manipulate the cube naturally with drag-and-rotate controls. I’d also consider building the app cross-platform, possibly using a framework like WPF, Qt, or even converting it into a web-based tool so it’s more accessible.
+      </p>
+      <p>
+        I’d also improve the algorithm viewer to highlight move patterns visually and help users connect algorithms to actual cube states more intuitively — bridging the gap between memorization and recognition.
+      </p>
+    </section>
+
+    <a href="../index.html" style="display: inline-block; margin-top: 2rem;">← Back to Portfolio</a>
+  </main>
+</body>
+</html>

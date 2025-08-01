@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cellular Sand Simulation</title>
+  <style>
+    canvas {
+      border: 1px solid white;
+      background: black;
+      display: block;
+      margin: 10px auto;
+      touch-action: none;
+    }
+    body {
+      background: #000;
+      color: white;
+      font-family: monospace;
+      text-align: center;
+    }
+    .toolbar {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px;
+      flex-wrap: wrap;
+    }
+    .toolbar button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #222;
+      color: white;
+      border: 1px solid white;
+      border-radius: 6px;
+    }
+    .toolbar button.active {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sand Simulation</h1>
+  <canvas id="sandCanvas" width="800" height="400"></canvas>
+  <div class="toolbar">
+    <button id="btnSand">Sand</button>
+    <button id="btnRock">Rock</button>
+    <button id="btnWater">Water</button>
+    <button id="btnEraser">Eraser</button>
+    <button id="btnClear">Clear</button>
+  </div>
+
+  <script>
+    const canvas = document.getElementById("sandCanvas");
+    const ctx = canvas.getContext("2d");
+
+    const gridWidth = 100;
+    const gridHeight = 50;
+    const cellSize = 8;
+    const waterIdleTime = 50;
+    const sandIdleTime = 10;
+
+    let grid, idleTracker, physicsSand, staticSand, physicsWater, staticWater, rocks;
+    function resetGrid() {
+      grid = Array.from({ length: gridWidth }, () => Array(gridHeight).fill(' '));
+      idleTracker = new Map();
+      physicsSand = [];
+      staticSand = [];
+      physicsWater = [];
+      staticWater = [];
+      rocks = [];
+    }
+    resetGrid();
+
+    let currentMaterial = 's';
+
+    const buttons = {
+      s: document.getElementById("btnSand"),
+      '#': document.getElementById("btnRock"),
+      w: document.getElementById("btnWater"),
+      e: document.getElementById("btnEraser")
+    };
+
+    function setMaterial(material) {
+      currentMaterial = material;
+      for (let key in buttons) {
+        buttons[key].classList.remove("active");
+      }
+      if (material !== ' ') buttons[material].classList.add("active");
+    }
+
+    setMaterial('s');
+    buttons['s'].onclick = () => setMaterial('s');
+    buttons['#'].onclick = () => setMaterial('#');
+    buttons['w'].onclick = () => setMaterial('w');
+    buttons['e'].onclick = () => setMaterial(' ');
+    document.getElementById("btnClear").onclick = () => resetGrid();
+
+    function wakeNeighbours(pos) {
+      for (let dx = -2; dx <= 2; dx++) {
+        for (let dy = -2; dy <= 2; dy++) {
+          const nx = pos.x + dx;
+          const ny = pos.y + dy;
+          if (nx >= 0 && ny >= 0 && nx < gridWidth && ny < gridHeight) {
+            const nKey = `${nx},${ny}`;
+            const nMaterial = grid[nx][ny];
+            if (nMaterial === 's') {
+              if (!physicsSand.some(p => p.x === nx && p.y === ny)) {
+                staticSand = staticSand.filter(p => !(p.x === nx && p.y === ny));
+                physicsSand.push({ x: nx, y: ny });
+              }
+              idleTracker.set(nKey, 0);
+            } else if (nMaterial === 'w') {
+              if (!physicsWater.some(p => p.x === nx && p.y === ny)) {
+                staticWater = staticWater.filter(p => !(p.x === nx && p.y === ny));
+                physicsWater.push({ x: nx, y: ny });
+              }
+              idleTracker.set(nKey, 0);
+            }
+          }
+        }
+      }
+    }
+
+    function getTouchPos(e) {
+      const rect = canvas.getBoundingClientRect();
+      const touch = e.touches[0] || e.changedTouches[0];
+      const x = Math.floor((touch.clientX - rect.left) / cellSize);
+      const y = Math.floor((touch.clientY - rect.top) / cellSize);
+      return { x, y };
+    }
+
+    function getMousePos(e) {
+      const rect = canvas.getBoundingClientRect();
+      const x = Math.floor((e.clientX - rect.left) / cellSize);
+      const y = Math.floor((e.clientY - rect.top) / cellSize);
+      return { x, y };
+    }
+
+    function addMaterial(pos, type) {
+      if (pos.x < 0 || pos.x >= gridWidth || pos.y < 0 || pos.y >= gridHeight) return;
+
+      if (type === ' ') {
+        // Eraser
+        if (grid[pos.x][pos.y] === 's') {
+          physicsSand = physicsSand.filter(p => !(p.x === pos.x && p.y === pos.y));
+          staticSand = staticSand.filter(p => !(p.x === pos.x && p.y === pos.y));
+        } else if (grid[pos.x][pos.y] === 'w') {
+          physicsWater = physicsWater.filter(p => !(p.x === pos.x && p.y === pos.y));
+          staticWater = staticWater.filter(p => !(p.x === pos.x && p.y === pos.y));
+        } else if (grid[pos.x][pos.y] === '#') {
+          rocks = rocks.filter(p => !(p.x === pos.x && p.y === pos.y));
+        }
+        grid[pos.x][pos.y] = ' ';
+        wakeNeighbours(pos);
+        return;
+      }
+
+      if (grid[pos.x][pos.y] !== ' ') return;
+      grid[pos.x][pos.y] = type;
+      if (type === 's') physicsSand.push(pos);
+      else if (type === 'w') physicsWater.push(pos);
+      else if (type === '#') rocks.push(pos);
+      wakeNeighbours(pos);
+    }
+
+    let painting = false;
+    let lastPos = null;
+    let placeInterval = null;
+
+    function placeMaterialRepeatedly() {
+      if (lastPos) {
+        addMaterial(lastPos, currentMaterial);
+      }
+    }
+
+    function startPainting(pos) {
+      painting = true;
+      lastPos = pos;
+      placeMaterialRepeatedly();
+      placeInterval = setInterval(placeMaterialRepeatedly, 10);
+    }
+
+    function stopPainting() {
+      painting = false;
+      lastPos = null;
+      if (placeInterval) {
+        clearInterval(placeInterval);
+        placeInterval = null;
+      }
+    }
+
+    canvas.addEventListener("mousedown", e => {
+      startPainting(getMousePos(e));
+    });
+    canvas.addEventListener("mousemove", e => {
+      if (painting) {
+        lastPos = getMousePos(e);
+      }
+    });
+    canvas.addEventListener("mouseup", stopPainting);
+    canvas.addEventListener("mouseleave", stopPainting);
+
+    canvas.addEventListener("touchstart", e => {
+      e.preventDefault();
+      startPainting(getTouchPos(e));
+    }, { passive: false });
+    canvas.addEventListener("touchmove", e => {
+      e.preventDefault();
+      if (painting) {
+        lastPos = getTouchPos(e);
+      }
+    }, { passive: false });
+    canvas.addEventListener("touchend", e => {
+      stopPainting();
+    });
+
+    function updateWater() {
+      for (let i = 0; i < physicsWater.length; i++) {
+        let p = physicsWater[i];
+        if (p.y >= gridHeight - 1) continue;
+        let dir = Math.random() < 0.5 ? -1 : 1;
+        const down = { x: p.x, y: p.y + 1 };
+        const sideways = { x: p.x + dir, y: p.y };
+
+        if (grid[down.x]?.[down.y] === ' ') {
+          grid[p.x][p.y] = ' ';
+          grid[down.x][down.y] = 'w';
+          physicsWater[i] = down;
+          wakeNeighbours(down);
+        } else if (grid[sideways.x]?.[sideways.y] === ' ') {
+          grid[p.x][p.y] = ' ';
+          grid[sideways.x][sideways.y] = 'w';
+          physicsWater[i] = sideways;
+          wakeNeighbours(sideways);
+        } else {
+          const key = `${p.x},${p.y}`;
+          idleTracker.set(key, (idleTracker.get(key) || 0) + 1);
+          if (idleTracker.get(key) > waterIdleTime) {
+            staticWater.push(p);
+            physicsWater.splice(i--, 1);
+            idleTracker.delete(key);
+          }
+        }
+      }
+    }
+
+    function updateSand() {
+      for (let i = 0; i < physicsSand.length; i++) {
+        let p = physicsSand[i];
+        if (p.y >= gridHeight - 1) continue;
+        const below = { x: p.x, y: p.y + 1 };
+        const downLeft = { x: p.x - 1, y: p.y + 1 };
+        const downRight = { x: p.x + 1, y: p.y + 1 };
+
+        if (grid[below.x]?.[below.y] === ' ') {
+          grid[p.x][p.y] = ' ';
+          grid[below.x][below.y] = 's';
+          physicsSand[i] = below;
+          wakeNeighbours(below);
+        } else if (grid[below.x]?.[below.y] === 'w') {
+          grid[p.x][p.y] = 'w';
+          grid[below.x][below.y] = 's';
+          physicsSand[i] = below;
+          wakeNeighbours(below);
+        } else if (grid[downLeft.x]?.[downLeft.y] === ' ') {
+          grid[p.x][p.y] = ' ';
+          grid[downLeft.x][downLeft.y] = 's';
+          physicsSand[i] = downLeft;
+          wakeNeighbours(downLeft);
+        } else if (grid[downRight.x]?.[downRight.y] === ' ') {
+          grid[p.x][p.y] = ' ';
+          grid[downRight.x][downRight.y] = 's';
+          physicsSand[i] = downRight;
+          wakeNeighbours(downRight);
+        } else {
+          const key = `${p.x},${p.y}`;
+          idleTracker.set(key, (idleTracker.get(key) || 0) + 1);
+          if (idleTracker.get(key) > sandIdleTime) {
+            staticSand.push(p);
+            physicsSand.splice(i--, 1);
+            idleTracker.delete(key);
+          }
+        }
+      }
+    }
+
+    function draw() {
+      for (let x = 0; x < gridWidth; x++) {
+        for (let y = 0; y < gridHeight; y++) {
+          switch (grid[x][y]) {
+            case 's': ctx.fillStyle = "yellow"; break;
+            case '#': ctx.fillStyle = "gray"; break;
+            case 'w': ctx.fillStyle = "cyan"; break;
+            default: ctx.fillStyle = "black"; break;
+          }
+          ctx.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
+        }
+      }
+    }
+
+    function loop() {
+      updateSand();
+      updateWater();
+      draw();
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+  </script>
+</body>
+</html>

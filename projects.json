@@ -3,35 +3,35 @@
     "title": "Chess Robot",
     "category": ["highlighted", "engineering"],
     "description": "ESP32-controlled robot that moves chess pieces magnetically.",
-    "image": "images/chess-thumb.jpg",
+    "image": "thumbnails/chess-thumb.jpg",
     "link": "project-chess.html"
   },
   {
     "title": "3D Renderer",
     "category": ["cs"],
     "description": "3D object displayer in c#, with rotation handled by matrix maths",
-    "image": "images/renderer-thumb.jpg",
+    "image": "thumbnails/renderer-thumb.jpg",
     "link": "project-renderer.html"
   },
   {
     "title": "Cube Trainer",
     "category": ["highlighted", "cs"],
     "description": "Timer and algorithm tracker for Rubik’s Cube practice.",
-    "image": "images/cube-thumb.jpg",
+    "image": "thumbnails/cube-thumb.jpg",
     "link": "project-cubetrainer.html"
   },
   {
     "title": "Multiplexer Chess Grid",
     "category": ["engineering"],
     "description": "8x8 reed switch input grid controlled by ESP32.",
-    "image": "images/grid-thumb.jpg",
+    "image": "thumbnails/grid-thumb.jpg",
     "link": "project-reedswitch.html"
   },
   {
     "title": "Minecraft - Discord Bridge",
     "category": ["cs"],
     "description": "Discord Bot that bridges minecraft and discord chat",
-    "image": "images/grid-thumb.jpg",
+    "image": "thumbnails/grid-thumb.jpg",
     "link": "project-lsc.html"
   }
   ,
@@ -39,14 +39,14 @@
     "title": "Grimrr",
     "category": ["cs"],
     "description": "Hypixel guild utility bot for discord",
-    "image": "images/grid-thumb.jpg",
+    "image": "thumbnails/grid-thumb.jpg",
     "link": "project-grimrr.html"
   },
   {
     "title": "Cellular Physics Sandbox",
     "category": ["cs", "highlighted"],
     "description": "Console sandbox with fluid simulation and touch control",
-    "image": "images/CellularSand-thumb.jpg",
-    "link": "project-CellularSand-thumb.html"
+    "image": "thumbnails/sandsim-thumb.jpg",
+    "link": "project-sandsim.html"
   }
 ]
