@@ -35,7 +35,7 @@ fetch('projects.json')
 
 // Tap-to-hover for mobile devices
 function setupMobileTapOverlay() {
-  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  const isTouchDevice = typeof screen.orientation !== 'undefined'
 
   if (isTouchDevice) {
     let lastTapped = null;
