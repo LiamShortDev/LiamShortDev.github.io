@@ -41,6 +41,7 @@ window.mobileCheck = function() { // mobile check function from detectmobilebrow
 // Tap-to-hover for mobile devices
 function setupMobileTapOverlay() {
   const isTouchDevice = mobileCheck();
+  console.log(isTouchDevice);
 
   if (isTouchDevice) {
     let lastTapped = null;
