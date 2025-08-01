@@ -9,7 +9,7 @@
   {
     "title": "3D Renderer",
     "category": ["cs"],
-    "description": "C# 3D engine using matrix math — rendered without projection.",
+    "description": "3D object displayer in c#, with rotation handled by matrix maths",
     "image": "images/renderer-thumb.jpg",
     "link": "project-renderer.html"
   },
@@ -26,5 +26,20 @@
     "description": "8x8 reed switch input grid controlled by ESP32.",
     "image": "images/grid-thumb.jpg",
     "link": "project-reedswitch.html"
+  },
+  {
+    "title": "Minecraft - Discord Bridge",
+    "category": ["cs"],
+    "description": "Discord Bot that bridges minecraft and discord chat",
+    "image": "images/grid-thumb.jpg",
+    "link": "project-lsc.html"
+  }
+  ,
+  {
+    "title": "Grimrr",
+    "category": ["cs"],
+    "description": "Hypixel guild utility bot for discord",
+    "image": "images/grid-thumb.jpg",
+    "link": "project-grimrr.html"
   }
 ]
