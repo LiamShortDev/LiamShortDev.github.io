@@ -41,5 +41,12 @@
     "description": "Hypixel guild utility bot for discord",
     "image": "images/grid-thumb.jpg",
     "link": "project-grimrr.html"
+  },
+  {
+    "title": "Cellular Physics Sandbox",
+    "category": ["cs", "highlighted"],
+    "description": "Console sandbox with fluid simulation and touch control",
+    "image": "images/CellularSand-thumb.jpg",
+    "link": "project-CellularSand-thumb.html"
   }
 ]
