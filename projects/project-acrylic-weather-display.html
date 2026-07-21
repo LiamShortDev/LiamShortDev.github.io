@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acrylic Weather Display - Liam Short Portfolio</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    main.project-page {
+      max-width: 720px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    ul.tech-stack {
+      list-style: disc;
+      margin-left: 1.5rem;
+    }
+
+    .github-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #007acc;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .github-link:hover {
+      text-decoration: underline;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .media-item {
+      margin: 0;
+      flex: 1 1 260px;
+      max-width: 100%;
+    }
+
+    .media-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      display: block;
+    }
+
+    .media-item figcaption {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 0.4rem;
+    }
+
+    .pdf-embed {
+      height: 500px;
+    }
+
+    .video-embed {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin-top: 1rem;
+    }
+
+    .video-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin-top: 0;
+    }
+
+    ul.skills-list {
+      list-style: disc;
+      margin-left: 1.5rem;
+      line-height: 1.6;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    table th,
+    table td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <main class="project-page">
+    <h1>Acrylic Weather Display</h1>
+
+    <section class="section">
+      <h2>Introduction</h2>
+
+<p>This page showcases the development process of an Acrylic Weather Display </p>
+    </section>
+
+    <section class="section">
+      <h2>Case</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/562238-Case#.png" alt="Case" loading="lazy" />
+      </figure>
+      <figure class="media-item">
+        <img src="./assets/562241-Case Lid.png" alt="Case" loading="lazy" />
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Case Drawing</h2>
+      <iframe src="./assets/583278-Assembly1-1.pdf.1" class="pdf-embed" allow="fullscreen"></iframe>
+      <p><a href="./assets/583278-Assembly1-1.pdf.1" class="github-link" target="_blank">View / Download PDF →</a></p>
+    </section>
+
+    <section class="section">
+      <h2>Tools used to design the case</h2>
+
+<p>I used three main categories of CAD tools: <strong>Create, Modify, and Pattern</strong> to develop the enclosure.</p>
+<p><strong>Create:</strong><br/>Extrusion tools were used to form the main body of the case by creating a hollow rectangular enclosure from a base sketch. Additional extrusions were used to create internal features such as the mounting pillar. Cut extrusions were also applied to produce functional features including the ventilation slots, cable openings, and button cut-out</p>
+<p><strong>Modify:</strong><br/>Fillet tools were used to round external and internal edges, improving both the aesthetics and structural integrity of the case while also making it more suitable for 3D printing. Fillets were also used for the USB-C hole to help guide the cable in when inserted. The emboss tool was used to add engraved text onto the inner wall of the enclosure.</p>
+<p><strong>Pattern:</strong><br/>The mirror tool was used to replicate symmetrical features across the case, such as duplicating the vent hole cut-outs using a rectangular pattern, and the 4 mounting pillars using two mirrors. This ensured consistency in the design while reducing the amount of manual modelling required. Patterning also helped maintain even spacing and alignment of repeated features like the ventilation slots.</p>
+    </section>
+
+    <section class="section">
+      <h2>Slicing Reflection</h2>
+
+<p>The main body of the case was positioned with its base on the print bed, providing a stable foundation for the print. This was also chosen to ensure the walls all had the same print quality making it appear more visually consistent.</p>
+<p>The lid was printed separately in a vertical orientation to preserve the sharpness of its edges and ensure a clean mating surface with the main enclosure. This orientation also minimised visible layer lines on the front-facing surface.<br/><br/>Several features, including the side cut-out and internal overhangs, introduce 90° overhangs, which cannot be printed reliably without support. As a result, support structures were generated from the build plate to sustain these regions. These supports extend into the internal cavity of the enclosure, particularly around the central opening and connector cut-outs, ensuring that these features maintain their intended geometry during printing.</p>
+    </section>
+
+    <section class="section">
+      <h2>Additive Manufacturing</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/566991-Screenshot 2026-04-26 163721.png" alt="Additive Manufacturing" loading="lazy" />
+        <figcaption>Screenshot 2026-04-26 163721.png</figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>CAD Reflections</h2>
+
+<h5><span role="text"><strong>Using CAD to Produce 3D Parts</strong></span></h5>
+<p>The CAD process was effective in producing a functional enclosure with consistent dimensions, using parametric sketches and pattern tools to speed up development. However, some features were not initially designed with manufacturing constraints in mind, particularly internal overhangs that required support during printing. This increased post-processing time. In future, I would improve this by considering additive manufacturing limitations earlier in the design stage, such as minimising unsupported overhangs and incorporating self-supporting geometries.</p>
+<hr/>
+<h5><span role="text"><strong>Using CAD to Produce Drawings</strong></span></h5>
+<p>Technical drawings were successfully generated to communicate the design, including key dimensions and views, improving clarity and allowing the part to be understood without the 3D model. Tolerances were later added to improve manufacturability; however, defining appropriate tolerance values proved challenging due to limited validation against real manufacturing constraints and fit requirements. As a result, some tolerances may not be fully optimised for the intended application. In future, this could be improved by testing physical prototypes and using standard engineering tolerance guidelines to better justify and refine these values.</p>
+<hr/>
+<h5><span role="text"><strong>Additive Manufacturing</strong></span></h5>
+<p>The additive manufacturing process successfully produced a functional enclosure with acceptable surface finish and dimensional accuracy. Print orientation choices ensured structural stability and consistent external quality. However, the design required significant support material, particularly in internal regions, increasing material usage and post-processing effort. In future, I would improve this by optimising the design for additive manufacturing, reducing overhangs and designing features that minimise the need for supports.</p>
+    </section>
+
+    <section class="section">
+      <h2>Jab 1</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/585891-Jab1.png" alt="Jab 1" loading="lazy" />
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Jab 2</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/585905-Jab2.png" alt="Jab 2" loading="lazy" />
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Jab 3</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/585927-Jab3.png" alt="Jab 3" loading="lazy" />
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Jab 1 Caption</h2>
+
+<h5>Project week is well underway. Day 1 commences with the assembly of our PCB by Cai and Jonny. We’re all excited to see where this will take us and we may learn.</h5>
+    </section>
+
+    <section class="section">
+      <h2>Jab 3 Caption</h2>
+
+<h5>The acrylic sheets designed by Dom have arrived and they’re looking fantastic! Now it’s time to bring everything together.</h5>
+    </section>
+
+    <section class="section">
+      <h2>Jab 2 Caption</h2>
+
+<h5>A showcase of our system so far. Cai is taking safety precaution by using dimming glasses. Liams new 3D printed casing is amazing!</h5>
+    </section>
+
+    <section class="section">
+      <h2>Right Hook</h2>
+      <div class="video-embed">
+        <iframe src="https://uniofbath.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=ad52f5db-ffa2-46c7-b60c-b43d00ed4047&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" allowfullscreen allow="autoplay"></iframe>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Jab 2 Caption</h2>
+
+<h5><strong>This is engineering.</strong><br/><strong>Design it. Build it. Bring it to life.</strong><br/><strong>Study Engineering at the University of Bath!!</strong></h5>
+    </section>
+
+    <section class="section">
+      <h2>Aim of the social media campaign</h2>
+
+<p>The aim of this social media campaign was to promote engineering as an engaging, creative, and hands-on discipline to a target audience of prospective students, particularly those considering university courses. The posts were designed to highlight the full design process, from initial PCB assembly to final system integration, allowing viewers to see how ideas are transformed into real, functioning products. Visual content, including progress updates and demonstrations, was used to maintain engagement and showcase tangible outcomes, making the subject more accessible and appealing.</p>
+<p>The campaign also aimed to emphasise the collaborative and practical nature of engineering through team-based activities and real-world problem solving. Clear, concise captions and a strong call to action were included to encourage viewers to consider studying engineering, specifically at the University of Bath. Overall, the desired outcome was to inspire interest in engineering and demonstrate the opportunities it offers.</p>
+    </section>
+
+    <section class="section">
+      <h2>Social Media Communications Reflection</h2>
+
+<p>The social media campaign demonstrated effective synthesis by combining technical project work with communication strategies to engage a specific audience. Engineering concepts were translated into accessible visual content, allowing complex processes to be clearly understood by prospective students. This required integrating design, teamwork, and presentation skills to produce a coherent narrative across posts. However, some content could have been more targeted to audience interests to maximise engagement. In future, I would refine this by tailoring posts more specifically and incorporating feedback to improve clarity and impact.</p>
+    </section>
+
+    <section class="section">
+      <h2>Inclusive Teamwork: Skill Matrix</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/573661-Skill Matrix.png" alt="Inclusive Teamwork: Skill Matrix" loading="lazy" />
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Inclusive Teamwork</h2>
+
+<p><strong>1) Teamwork operation</strong></p>
+<p>Our team carried out most of the work in person, which allowed for direct collaboration and quicker problem-solving. We discussed ideas, divided tasks, and reviewed progress together during these sessions. To support this, we used a WhatsApp group for communication outside of meetings, mainly to organise meet-up times and share quick updates such as screenshots or minor issues. This combination of face-to-face work and online communication helped maintain consistent engagement and ensured everyone stayed informed and involved throughout the project.</p>
+<hr/>
+<p><strong>2) Process for bystander intervention</strong><br/>We established a clear expectation that all team members were responsible for speaking up if they noticed inappropriate behaviour or exclusion. This was supported by creating an open environment where concerns could be raised without judgement. During meetings, we encouraged everyone to challenge ideas respectfully and check in if someone seemed uncomfortable or disengaged. This process helped ensure that issues were addressed early and that all members felt supported in maintaining a respectful and inclusive team dynamic.</p>
+<hr/>
+<p><strong>3) Protected characteristics considered</strong><br/>While working on the project, we considered several protected characteristics, including gender, race, and disability. We ensured that communication and task allocation did not disadvantage any individual and that all team members had equal opportunities to contribute. For example, we were mindful of different confidence levels and communication styles, making sure quieter members were given space to share their ideas. This approach helped create a fair and supportive working environment for everyone involved.</p>
+<hr/>
+<p><strong>4) Two processes for inclusive communication</strong><br/>Firstly, we used structured turn-taking during meetings to ensure that everyone had an opportunity to speak and contribute their ideas. This prevented dominant voices from overshadowing others. Secondly, we shared written summaries of discussions and decisions after meetings. This ensured that all team members, including those who may have missed a meeting or needed more time to process information, could stay informed and engaged with the project.</p>
+<hr/>
+<p><strong>5) Why these processes enhance inclusivity</strong><br/>These processes enhance inclusivity by ensuring that all team members have equal opportunities to participate and feel valued. Structured turn-taking reduces the risk of individuals being overlooked, while written summaries improve accessibility and clarity. Together, they create an environment where communication is transparent and respectful. This not only improves collaboration but also helps build confidence among team members, leading to more effective teamwork and better overall project outcomes.</p>
+    </section>
+
+    <section class="section">
+      <h2>Risk Assessment</h2>
+      <iframe src="./assets/562288-Risk Assessment Matrix.pdf.1" class="pdf-embed" allow="fullscreen"></iframe>
+      <p><a href="./assets/562288-Risk Assessment Matrix.pdf.1" class="github-link" target="_blank">View / Download PDF →</a></p>
+    </section>
+
+    <section class="section">
+      <h2>Risk Assessment</h2>
+      <iframe src="./assets/555526-Risk Assessment Matrix Scale.pdf" class="pdf-embed" allow="fullscreen"></iframe>
+      <p><a href="./assets/555526-Risk Assessment Matrix Scale.pdf" class="github-link" target="_blank">View / Download PDF →</a></p>
+    </section>
+
+    <section class="section">
+      <h2>Project Management</h2>
+      <iframe src="./assets/557199-Project Management.pdf" class="pdf-embed" allow="fullscreen"></iframe>
+      <p><a href="./assets/557199-Project Management.pdf" class="github-link" target="_blank">View / Download PDF →</a></p>
+    </section>
+
+    <section class="section">
+      <h2>Project Management</h2>
+
+<p>The project was divided into four main objectives to ensure a structured development process. First, the PCB system was designed, including schematic creation, layout verification, manufacturing, assembly, and testing. Next, software was developed to control the lighting behaviour for different weather states. In parallel, acrylic visual components were designed, laser cut, and integrated with the electronics. Finally, the full product was modelled in CAD, including casing design and technical drawings. This staged approach allowed electrical, software, and mechanical elements to be developed systematically and integrated effectively.</p>
+    </section>
+
+    <section class="section">
+      <h2>Effective Time Management: Gantt Chart</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/557188-Screenshot 2026-04-23 115106.png" alt="Effective Time Management: Gantt Chart" loading="lazy" />
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Management Reflections</h2>
+
+<h5><span role="text"><strong>Effective Project Management</strong></span></h5>
+<p>Project management was successful in structuring the development process into clear stages, allowing different aspects of the project to be completed systematically. This helped ensure steady progress and integration of components. However, some tasks took longer than expected due to underestimating complexity. In future, I would improve this by allocating more realistic time estimates and building in contingency time to better manage delays.</p>
+<hr/>
+<h5><span role="text"><strong>Effective Time Management</strong></span></h5>
+<p>Time was managed effectively by breaking the project into smaller tasks and using a Gantt chart to plan and track progress. This helped ensure that key milestones were identified and generally met throughout the project. However, the schedule did not account for sufficient contingency or float time, meaning that when delays occurred, particularly during testing and integration, they impacted later tasks. In future, this could be improved by incorporating buffer time into the Gantt chart and allowing flexibility between dependent tasks to better manage uncertainty and reduce the impact of delays.</p>
+<hr/>
+<h5><span role="text"><strong>Risk Assessment</strong></span></h5>
+<p>The risk assessment successfully identified key hazards, including electrical, thermal, and manufacturing risks, helping to ensure safe working practices throughout the project. However, some risks were initially described in a general way without detailed likelihood or severity analysis. In future, I would improve this by quantifying risks more clearly and updating the assessment dynamically as the project develops.</p>
+<hr/>
+<h5><span role="text"><strong>Inclusive Teamwork</strong></span></h5>
+<p>Teamwork was effective, with clear communication and collaboration both in person and through online messaging. This ensured that tasks were completed efficiently and that all members remained engaged. However, some individuals contributed more than others at times, leading to slight imbalance in workload. In future, I would improve this by allocating tasks more evenly and regularly reviewing contributions to ensure balanced participation.</p>
+    </section>
+
+    <section class="section">
+      <h2>Datasheet Creation</h2>
+      <iframe src="./assets/572004-Modular Display Datasheet.pdf.1" class="pdf-embed" allow="fullscreen"></iframe>
+      <p><a href="./assets/572004-Modular Display Datasheet.pdf.1" class="github-link" target="_blank">View / Download PDF →</a></p>
+    </section>
+
+    <section class="section">
+      <h2>Datasheet Creation Reflection</h2>
+
+<p>The datasheet effectively summarised the key specifications and functionality of the product, presenting information in a clear and structured format. This improved the professionalism of the project documentation. However, some sections lacked detailed technical justification and deeper explanation of design decisions. In future, I would improve this by including more detailed specifications, performance data, and justification to make the datasheet more comprehensive and technically rigorous.</p>
+    </section>
+
+    <section class="section">
+      <h2>Climate and sustainability Impact of electronics devices</h2>
+
+<p><strong><img alt="" aria-hidden="" loading="lazy" role="" src="../../../export_info/files/556750-download.png" style="float:left;" width="225"/>1) Sustainability framework</strong></p>
+<p>A relevant sustainability framework for this project is <span class="hover:entity-accent entity-underline inline cursor-pointer align-baseline"><span class="whitespace-normal">United Nations</span></span> Sustainable Development Goal 7: Affordable and Clean Energy. This goal focuses on improving energy efficiency and reducing unnecessary energy consumption. The acrylic weather display aligns with this by using low-power electronic components such as LEDs and a microcontroller, which consume significantly less energy compared to traditional display systems. By designing the system to operate efficiently, the project supports the wider aim of reducing energy demand and promoting sustainable use of electricity.</p>
+<p> </p>
+<hr/>
+<p><strong>2) Electronic system &amp; sustainability</strong><br/>The system operates using a microcontroller that retrieves weather data from an external API rather than relying on onboard sensors. The microcontroller processes this data and controls the LED illumination within the acrylic display. Sustainability is enhanced by limiting how often the system requests data, as it only checks the API periodically instead of continuously. This reduces power consumption associated with wireless communication, which is typically one of the most energy-intensive operations in embedded systems. Combined with low-power LEDs and efficient processing, this approach minimises overall energy usage.</p>
+<hr/>
+<p><strong>3) Overall impact on sustainability</strong><br/>The acrylic weather display has both positive and negative impacts on sustainability. On the positive side, the system uses energy-efficient components such as LEDs and low-power microcontrollers, which reduce electricity consumption during operation. The use of digital display also eliminates the need for printed materials, reducing paper waste over time. However, there are less sustainable aspects of the project. The use of acrylic, which is a plastic material, has environmental drawbacks as it is derived from non-renewable resources and is not easily biodegradable. Additionally, electronic components contribute to e-waste if not properly recycled at the end of the product’s life cycle. Despite these drawbacks, the overall design can still be considered partially sustainable if efforts are made to extend the product’s lifespan, minimise waste during manufacturing, and dispose of components responsibly. This balanced approach demonstrates consideration of sustainability throughout the project lifecycle.</p>
+    </section>
+
+    <section class="section">
+      <h2>Life cycle assessment of electronics devices</h2>
+
+<h3><span role="text">1) Birth of the product</span></h3>
+<p>The acrylic weather display is composed of PMMA (acrylic), a microcontroller (e.g. ESP32/Arduino-class), LEDs, and a PCB. Acrylic production has an estimated carbon footprint of ~5.5 kg CO2 per kg of material, due to petroleum extraction and high-temperature polymerisation processes [1]. Assuming ~150g of acrylic is used across the 6 sheets, this contributes ~0.8 kg CO2.</p>
+<p>Electronic components contribute significantly to the overall carbon footprint. Printed circuit board (PCB) production is estimated to contribute approximately 1–3 kg CO2 per board, primarily due to copper extraction, chemical etching, and high-temperature processing [2]. In addition, semiconductor fabrication is highly energy-intensive, requiring cleanroom environments, photolithography, and multiple processing stages, which further increases the embodied carbon of the electronic system [3]. Although exact values for individual microcontrollers vary, these processes are widely recognised as major contributors to the environmental impact of electronic devices.</p>
+<p>Overall, the manufacturing phase is estimated to contribute ~6–8 kg CO2, making it the dominant stage in the product lifecycle.</p>
+<hr/>
+<h3><span role="text">2) Life of the product</span></h3>
+<p>During operation, the device consumes relatively low power. The system runs on approximately 3–6 W, including LEDs and the microcontroller. Assuming 5 W operation for 6 hours per day, annual energy consumption is:</p>
+<ul>
+<li>5W × 6h × 365 ≈ 11kWh/year</li>
+</ul>
+<p>Using a UK grid average of ~0.129 kg CO2 per kWh [4], this results in:</p>
+<ul>
+<li><strong>~1.4 kg CO2 per year</strong></li>
+</ul>
+<p>Sustainability is improved by periodic API calls rather than continuous data transmission, reducing Wi-Fi usage, which is one of the most energy-intensive processes in embedded systems. Over a typical 3-year lifespan, the use phase contributes approximately 4-5 kg CO2, comparable to manufacturing impact.</p>
+<hr/>
+<h3><span role="text">3) End of life</span></h3>
+<p>At end of life, the product contributes to electronic and plastic waste. Acrylic (PMMA) is technically recyclable through mechanical and chemical processes; however, in practice recycling rates remain limited due to collection and contamination challenges [5]. As a result, some acrylic components may still be disposed of in landfill.</p>
+<p>Electronic components require specialised recycling processes to recover valuable materials such as copper and gold. Recycling PCBs can recover up to 90% of metals, reducing the need for raw material extraction [6]. However, these processes themselves require energy, contributing approximately 1–2 kg CO2 per device.</p>
+<p>The environmental impact of this stage is partially mitigated by the product’s design, which allows separation of materials and reduces unnecessary disposal of functional components.</p>
+<hr/>
+<h2><span role="text">4) Reducing e-waste + quantified impact</span></h2>
+<p>A key improvement of the design is its modular architecture, allowing individual components to be replaced without discarding the entire product. The system is composed of a 3D printed enclosure, a removable PCB, and multiple acrylic display layers, all of which can be independently accessed and replaced.</p>
+<p>If a failure occurs, such as a damaged acrylic display segment or a faulty LED on the PCB, only the affected component needs to be replaced. The acrylic sheets can be individually removed and re-cut, while the PCB can be swapped without affecting the enclosure. This significantly reduces both material waste and electronic waste compared to fully integrated designs.</p>
+<p>Assuming the full device has a manufacturing footprint of approximately 8 kg CO₂, with ~6 kg attributed to electronics and ~2 kg to structural and acrylic components, replacing only a single failed element reduces emissions substantially.</p>
+<h3><span role="text"><strong>Estimated CO2 Reduction</strong></span></h3>
+<table class="w-fit min-w-(--thread-content-width)">
+<thead>
+<tr>
+<th>Scenario</th>
+<th>CO₂ Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full device replacement</td>
+<td>8 kg CO₂</td>
+</tr>
+<tr>
+<td>PCB-only replacement</td>
+<td>6 kg CO₂</td>
+</tr>
+<tr>
+<td>Single acrylic layer replacement</td>
+<td>~0.15 kg CO₂</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p>This demonstrates that the ability to replace individual acrylic layers and electronic components can reduce repair-related emissions by over <strong>90%</strong> in some cases. Therefore, modular design is a highly effective strategy for reducing e-waste and improving overall sustainability.</p>
+<hr/>
+<h2><span role="text"><strong>References</strong></span></h2>
+<p>[1]  A. I. Totaro. “The Unsustainable Prevalence of Plexiglass.” Renewable Matter. Accessed: 29-Apr-2026. [Online]. Available: <a href="https://www.renewablematter.eu/en/the-unsustainable-prevalence-of-plexiglass">https://www.renewablematter.eu/en/the-unsustainable-prevalence-of-plexiglass</a></p>
+<p>[2] S. Boyd, “Life-Cycle Assessment of Printed Circuit Boards,” Journal of Cleaner Production, vol. 19, no. 13, pp. 1433–1441, 2011. [Online]. Available: <a href="https://www.sciencedirect.com/science/article/pii/S095965261100093X">https://www.sciencedirect.com/science/article/pii/S095965261100093X</a>. [Accessed: 29-Apr-2026].</p>
+<p>[3] L. Chamness, “Global Semiconductor Carbon Emissions Forecast, 2025–2030,” TechInsights, Dec. 2024. Accessed: Apr. 29, 2026. [Online]. Available: <a href="https://library.techinsights.com/public/hg-asset/1a965735-48b8-43a0-8ebd-7b5b8f048db5">https://library.techinsights.com/public/hg-asset/1a965735-48b8-43a0-8ebd-7b5b8f048db5</a></p>
+<p>[4] J. Le Van, “Understanding the UK grid carbon emissions data.” Hoare Lea. Accessed: Apr. 29, 2026. [Online]. Available: <a href="https://hoarelea.com/2026/02/25/uk-grid-carbon-emissions-data/">https://hoarelea.com/2026/02/25/uk-grid-carbon-emissions-data/</a></p>
+<p>[5] Plastic Expert, “PMMA (Acrylic) Recycling.” Accessed: Apr. 29, 2026. [Online]. Available: <a href="https://www.plasticexpert.co.uk/plastic-recycling/pmma-acrylic-recycling/">https://www.plasticexpert.co.uk/plastic-recycling/pmma-acrylic-recycling/</a></p>
+<p>[6] <span>W. M. Ashraf, R. Panda, P. R. Jadhao, K. K. Pant, and V. Dua, “Sustainable recovery of Cu, Ag and Au from the waste printed circuit boards and process optimisation by machine learning,” </span><em>Computers &amp; Chemical Engineering</em><span>, vol. 201, p. 109237, Oct. 2025, doi: <a href="https://doi.org/10.1016/j.compchemeng.2025.109237">https://doi.org/10.1016/j.compchemeng.2025.109237</a>.</span></p>
+    </section>
+
+    <section class="section">
+      <h2>Sustainability Reflections</h2>
+
+<h5><span role="text"><strong>Sustainability Impact of Electronic Devices</strong></span></h5>
+<p>The project demonstrated consideration of sustainability through the use of low-power components and efficient operation, particularly by limiting API calls to reduce energy consumption. However, the use of acrylic and electronic components introduces environmental concerns, including non-biodegradable materials and e-waste. In future, I would improve this by selecting more sustainable materials where possible and designing the product for easier disassembly and recycling to reduce environmental impact.</p>
+<hr/>
+<h5><span role="text"><strong>Life Cycle Assessment of Electronic Devices</strong></span></h5>
+<p>The life cycle assessment combined material, manufacturing, and usage data to evaluate the environmental impact of the device. Quantitative estimates showed that both manufacturing and operation contribute significantly to total emissions. A key strength was linking these impacts to design decisions, such as reducing power use through periodic API calls and minimising e-waste via a modular design. However, some estimates, particularly for semiconductor fabrication, remain approximate due to limited data. In future, more precise component-level data or LCA tools would improve accuracy and reliability.</p>
+    </section>
+
+    <section class="section">
+      <h2>Engineering problem solving processes</h2>
+      <iframe src="./assets/569805-DnD matrix PW4.pdf.1" class="pdf-embed" allow="fullscreen"></iframe>
+      <p><a href="./assets/569805-DnD matrix PW4.pdf.1" class="github-link" target="_blank">View / Download PDF →</a></p>
+    </section>
+
+    <section class="section">
+      <h2>Engineering problem solving processes</h2>
+
+<p>I contributed to the verification and validation stage by carrying out all tests labelled under my name. This included measuring LED brightness with a lux meter, checking voltage levels across components for safety, and recording power consumption using a USB power meter. Through this, I ensured the design met key specifications such as safe operation. All my tests passed the expected completion rate and no further action was needed.</p>
+    </section>
+
+    <section class="section">
+      <h2>Engineering Problem Solving Processes Reflection</h2>
+
+<p>Problem-solving was effective throughout the project, particularly when addressing integration challenges between mechanical, electrical, and software components. Iterative testing and modification allowed issues to be identified and resolved efficiently. However, some problems were addressed reactively rather than being anticipated earlier in the design process. In future, I would improve this by applying more structured planning and risk analysis at earlier stages to reduce the need for later adjustments.</p>
+    </section>
+
+    <section class="section">
+      <h2>GenAI Acknowledgement Statement</h2>
+
+<p>GenAI was not used in the preparation of this assignment.</p>
+    </section>
+
+    <section class="section">
+      <h2>Skills Claimed</h2>
+      <ul class="skills-list">
+        <li><strong>Using CAD to produce 3D parts</strong> — claimed at I am claiming this skill at SynthesisPlace feedbackCloseFeedback - Annotation: Using CAD to produce 3D partsClosePlace feedback</li>
+        <li><strong>Using CAD to produce drawings</strong> — claimed at I am claiming this skill at SynthesisPlace feedbackCloseFeedback - Annotation: Using CAD to produce drawingsClosePlace feedback</li>
+        <li><strong>Additive manufacturing</strong> — claimed at I am claiming this skill at SynthesisPlace feedbackCloseFeedback - Annotation: Additive manufacturingClosePlace feedback</li>
+        <li><strong>Sustainability impact of electronics devices</strong> — claimed at I am claiming this skill at SynthesisPlace feedbackCloseFeedback - Annotation: Sustainability impact of electronics devicesClosePlace feedback</li>
+        <li><strong>Life cycle assessment of electronic devices</strong> — claimed at I am claiming this skill at SynthesisPlace feedbackCloseFeedback - Annotation: Life cycle assessment of electronic devicesClosePlace feedback</li>
+        <li><strong>Engineering Problem solving processes</strong> — claimed at I am claiming this skill at SynthesisPlace feedbackCloseFeedback - Annotation: Engineering Problem solving processesClosePlace feedback</li>
+        <li><strong>Social media communication</strong> — claimed at I am claiming this skill at SynthesisPlace feedbackCloseFeedback - Annotation: Social media communicationClosePlace feedback</li>
+        <li><strong>Datasheet creation</strong> — claimed at I am claiming this skill at SynthesisPlace feedbackCloseFeedback - Annotation: Datasheet creationClosePlace feedback</li>
+        <li><strong>Effective project management</strong> — claimed at I am claiming this skill at SynthesisPlace feedbackCloseFeedback - Annotation: Effective project managementClosePlace feedback</li>
+        <li><strong>Effective time management</strong> — claimed at I am claiming this skill at SynthesisPlace feedbackCloseFeedback - Annotation: Effective time managementClosePlace feedback</li>
+        <li><strong>Risk assessment</strong> — claimed at I am claiming this skill at SynthesisPlace feedbackCloseFeedback - Annotation: Risk assessmentClosePlace feedback</li>
+        <li><strong>Inclusive Teamwork</strong> — claimed at I am claiming this skill at SynthesisPlace feedbackCloseFeedback - Annotation: Inclusive TeamworkClosePlace feedback</li>
+        <li><strong>Online and library research, referencing & avoiding plagiarism</strong> — claimed at I am claiming this skill at ApplicationPlace feedbackCloseFeedback - Annotation: Online and library research, referencing & avoiding plagiarismClosePlace feedback</li>
+      </ul>
+    </section>
+
+    <a href="../index.html" style="display: inline-block; margin-top: 2rem;">← Back to Portfolio</a>
+  </main>
+</body>
+</html>
