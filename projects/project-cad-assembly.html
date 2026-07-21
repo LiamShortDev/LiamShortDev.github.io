@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CAD Assembly - Liam Short Portfolio</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    main.project-page {
+      max-width: 720px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    ul.tech-stack {
+      list-style: disc;
+      margin-left: 1.5rem;
+    }
+
+    .github-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #007acc;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .github-link:hover {
+      text-decoration: underline;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .media-item {
+      margin: 0;
+      flex: 1 1 260px;
+      max-width: 100%;
+    }
+
+    .media-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      display: block;
+    }
+
+    .media-item figcaption {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 0.4rem;
+    }
+
+    .pdf-embed {
+      height: 500px;
+    }
+
+    .video-embed {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin-top: 1rem;
+    }
+
+    .video-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin-top: 0;
+    }
+
+    ul.skills-list {
+      list-style: disc;
+      margin-left: 1.5rem;
+      line-height: 1.6;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    table th,
+    table td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <main class="project-page">
+    <h1>CAD Assembly</h1>
+
+    <section class="section">
+      <h2>Introduction</h2>
+
+<p>This page showcases the use of Autodesk Inventor to create an assembly.</p>
+    </section>
+
+    <section class="section">
+      <h2>Roller</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/cad-assembly/474668-Screenshot 2026-01-10 232808.png" alt="Roller" loading="lazy" />
+        <figcaption>Screenshot 2026-01-10 232808.png</figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Tools used to create the LEGO assembly</h2>
+
+<p>Two different categories of CAD tools were used during the modelling process: <strong>Constrain</strong> and <strong>Joint</strong>, each serving a distinct purpose within the application.</p>
+<p>The <strong>Constrain</strong> tool was used to define the fixed geometry of the model. Initially, the base component was fully constrained along the X, Y, and Z axes to remove all degrees of freedom and establish a stable reference frame. Subsequent components, such as individual bricks, were positioned by constraining two perpendicular edges. This method ensured that all translational and rotational movement was restricted, allowing precise and repeatable placement while maintaining dimensional accuracy across the model.</p>
+<p>The <strong>Joint</strong> tool was used for components that required controlled motion. Rotational joints were applied to the steering wheel and wheel rims to replicate realistic circular motion about a single axis. This allowed the movement of these parts to be tested within the assembly, verifying that clearances and alignment were correct. The use of joints was particularly relevant for validating functional behaviour rather than just static geometry.</p>
+    </section>
+
+    <section class="section">
+      <h2>LEGO</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/cad-assembly/474660-Screenshot 2026-01-10 225557.png" alt="LEGO" loading="lazy" />
+        <figcaption>Screenshot 2026-01-10 225557.png</figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>GenAI Acknowledgement Statement</h2>
+
+<p>GenAI was not used in the preparation of this assignment.</p>
+    </section>
+
+    <section class="section">
+      <h2>Skills Claimed</h2>
+      <ul class="skills-list">
+        <li><strong>Using CAD to produce 3D assemblies</strong> — claimed at I am claiming this skill at ApplicationPlace feedbackCloseFeedback - Annotation: Using CAD to produce 3D assembliesClosePlace feedback</li>
+      </ul>
+    </section>
+
+    <a href="../index.html" style="display: inline-block; margin-top: 2rem;">← Back to Portfolio</a>
+  </main>
+</body>
+</html>

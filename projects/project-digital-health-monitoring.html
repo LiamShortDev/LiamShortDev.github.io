@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital Health Monitoring - Liam Short Portfolio</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    main.project-page {
+      max-width: 720px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    ul.tech-stack {
+      list-style: disc;
+      margin-left: 1.5rem;
+    }
+
+    .github-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #007acc;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .github-link:hover {
+      text-decoration: underline;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .media-item {
+      margin: 0;
+      flex: 1 1 260px;
+      max-width: 100%;
+    }
+
+    .media-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      display: block;
+    }
+
+    .media-item figcaption {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 0.4rem;
+    }
+
+    .pdf-embed {
+      height: 500px;
+    }
+
+    .video-embed {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin-top: 1rem;
+    }
+
+    .video-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin-top: 0;
+    }
+
+    ul.skills-list {
+      list-style: disc;
+      margin-left: 1.5rem;
+      line-height: 1.6;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    table th,
+    table td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <main class="project-page">
+    <h1>Digital Health Monitoring</h1>
+
+    <section class="section">
+      <h2>Introduction</h2>
+
+<div>
+<p>The aim of this project week is to design, build, and test a pulse oximeter, and produce an accompanying datasheet.</p>
+</div>
+<div><span>This page demonstrates: </span></div>
+<div><span>- The way professional engineering skills were used for time management, datasheet creation and technical report writing. </span></div>
+<div><span>- How circuit simulation, design and electronic test and measurement were used to build and validate an analogue single-wavelength system to detect heart rate. </span></div>
+<div><span>- How PCB assembly helped with building the dual wavelength system where the MAX30100 sensor was used to measure both heart rate and blood oxygenation levels.</span></div>
+<div><span>- How embedded systems design was used to control both the single and dual- wavelength systems. </span></div>
+    </section>
+
+    <section class="section">
+      <h2>Time Management</h2>
+
+    </section>
+
+    <section class="section">
+      <h2>Gantt Chart</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/digital-health-monitoring/471366-Screenshot 2026-01-09 094319.png" alt="Gantt Chart" loading="lazy" />
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Circuit Simulation</h2>
+
+<h3><sub>Aim of the Simulation Analysis</sub></h3>
+<p>The aim of this simulation is to evaluate the effectiveness of the signal-conditioning circuit used for heart-rate detection with an LDR. Two sine wave sources were used at the input: one representing the desired heart-rate signal at 1.2 Hz (72 BPM), and another representing high-frequency noise (&gt;50 Hz). The circuit consists of three cascaded low-pass filters followed by an operational amplifier. The expected outcome is that the low-pass filters significantly attenuate the high-frequency noise while preserving the low-frequency heart-rate signal, which is then amplified by the op-amp for easier detection and processing.</p>
+<hr/>
+<h3><sub>Meaning of the Simulation Results</sub></h3>
+<p>The simulation results confirm that the signal-conditioning circuit performs as intended. The red waveform represents the unfiltered LDR output signal, which contains the desired heart-rate component at 1.2 Hz (72 BPM) superimposed with significant high-frequency noise above 50 Hz. In the time domain, this noise dominates the signal and makes the heart-rate component difficult to observe.</p>
+<p>After passing through the three cascaded low-pass filter stages and the operational amplifier, the output signal (purple waveform) shows a substantial reduction in high-frequency noise. The low-frequency heart-rate signal is preserved and becomes clearly visible as a smooth periodic waveform. The op-amp stage increases the amplitude of this filtered signal, improving its suitability for further processing or peak detection.</p>
+<p>This behaviour is further validated in the frequency domain. The spectrum of the unfiltered signal exhibits strong high-frequency components, while the filtered output shows significant attenuation of these components and a dominant peak at approximately 1.2 Hz, corresponding to the simulated heart rate. Overall, the results demonstrate that the low-pass filters effectively suppress unwanted high-frequency noise while maintaining the integrity of the heart-rate signal, confirming that the circuit meets its intended design objectives.</p>
+    </section>
+
+    <section class="section">
+      <h2>FFT Result</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/digital-health-monitoring/566460-Screenshot 2026-01-09 115909.png.1" alt="FFT Result" loading="lazy" />
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Simulation Circuit Schematic</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/digital-health-monitoring/471914-Screenshot (1).png.1" alt="Simulation Circuit Schematic" loading="lazy" />
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Simulation Results</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/digital-health-monitoring/566459-Screenshot 2026-01-09 115407.png.1" alt="Simulation Results" loading="lazy" />
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Circuit Design</h2>
+
+<div class="flex flex-col text-sm pb-25">
+<div class="text-base my-auto mx-auto pb-10 [--thread-content-margin:--spacing(4)] @w-sm/main:[--thread-content-margin:--spacing(6)] @w-lg/main:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)">
+<div class="[--thread-content-max-width:40rem] @w-lg/main:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn">
+<div class="flex max-w-full flex-col grow">
+<div class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-1">
+<div class="flex w-full flex-col gap-1 empty:hidden first:pt-[1px]">
+<div class="markdown prose dark:prose-invert w-full break-words dark markdown-new-styling">
+<h2><span role="text"><strong>Tailored Circuit Description and Performance Considerations</strong></span></h2>
+<p>The circuit implements an analogue signal-conditioning stage for heart-rate detection using a photoplethysmography input. The input consists of a small <strong>1.2 Hz signal (~1 mV)</strong> representing heart rate, combined with <strong>50 Hz noise (~100 mV)</strong> from ambient and electrical interference. To extract the desired signal, three cascaded RC low-pass filters are used.</p>
+<h5><span class="inline-block align-middle">\(f_c = \frac{1}{2\pi RC}\)<span class="vlist-r"><span class="vlist"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></h5>
+<p>Each stage uses <strong>R = 47 kΩ</strong> and <strong>C = 680 nF</strong>, giving a cutoff frequency of approximately <strong>5 Hz</strong>. This allows the 1.2 Hz heart-rate signal to pass with minimal attenuation while significantly reducing the 50 Hz noise. With three cascaded stages (−60 dB/decade), the 50 Hz interference is attenuated by approximately <strong>~60 dB</strong>, reducing the 100 mV noise to around <strong>100 µV</strong>, which is comparable to the signal level.</p>
+<h5><span class="inline-block align-middle">\(A_v = 1 + \frac{R_4}{R_5}​​\),​</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></h5>
+<p>The non-inverting op-amp stage uses <strong>R₄ = 4.7 kΩ</strong> and <strong>R₅ = 220 Ω</strong>, giving a gain of approximately <strong>×22</strong>, amplifying the filtered signal to a usable level (~20–30 mV).</p>
+<p>Component tolerances of <strong>±5%</strong> result in cutoff variation between approximately <strong>4.5–5.5 Hz</strong>, which does not significantly affect performance due to the large separation between 1.2 Hz and 50 Hz. The op-amp input offset (~1–2 mV) is small relative to the amplified signal, and supply variations mainly affect amplitude rather than filtering behaviour, demonstrating robust circuit operation.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </section>
+
+    <section class="section">
+      <h2>Schematic and photo of prototype</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/digital-health-monitoring/584778-IMG_9389.jpeg.1" alt="Schematic and photo of prototype" loading="lazy" />
+      </figure>
+      <figure class="media-item">
+        <img src="./assets/digital-health-monitoring/584780-IMG_9430.jpeg.1" alt="Schematic and photo of prototype" loading="lazy" />
+      </figure>
+      <figure class="media-item">
+        <img src="./assets/digital-health-monitoring/584779-IMG_9431.jpeg.1" alt="Schematic and photo of prototype" loading="lazy" />
+      </figure>
+      <figure class="media-item">
+        <img src="./assets/digital-health-monitoring/471914-Screenshot (1).png.1" alt="Schematic and photo of prototype" loading="lazy" />
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Physical system</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/digital-health-monitoring/479763-IMG_9424.jpeg" alt="Physical system" loading="lazy" />
+      </figure>
+      <figure class="media-item">
+        <img src="./assets/digital-health-monitoring/469205-PCB_Schematic.png" alt="Physical system" loading="lazy" />
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Arduino code</h2>
+      <iframe src="./assets/digital-health-monitoring/481049-Dual-Wavelength Pulse Oximeter Arduino Code (1).pdf" class="pdf-embed" allow="fullscreen"></iframe>
+      <p><a href="./assets/digital-health-monitoring/481049-Dual-Wavelength Pulse Oximeter Arduino Code (1).pdf" class="github-link" target="_blank">View / Download PDF →</a></p>
+    </section>
+
+    <section class="section">
+      <h2>Video demonstration</h2>
+      <div class="video-embed">
+        <iframe src="https://uniofbath.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=4246b10c-1da8-482d-bfa0-b3cd00b3292d&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" allowfullscreen allow="autoplay"></iframe>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Datasheet</h2>
+      <iframe src="./assets/digital-health-monitoring/471685-Single-Wavelength Pulse Oximeter Datasheet (2).pdf" class="pdf-embed" allow="fullscreen"></iframe>
+      <p><a href="./assets/digital-health-monitoring/471685-Single-Wavelength Pulse Oximeter Datasheet (2).pdf" class="github-link" target="_blank">View / Download PDF →</a></p>
+    </section>
+
+    <section class="section">
+      <h2>Technical Report</h2>
+      <iframe src="./assets/digital-health-monitoring/481110-Dual-Wavelength Pulse Oximeter Lab Report (1).pdf" class="pdf-embed" allow="fullscreen"></iframe>
+      <p><a href="./assets/digital-health-monitoring/481110-Dual-Wavelength Pulse Oximeter Lab Report (1).pdf" class="github-link" target="_blank">View / Download PDF →</a></p>
+    </section>
+
+    <section class="section">
+      <h2>Embedded Systems Design</h2>
+
+<p>The project involves the development of a microcontroller-based pulse oximeter system designed to measure and display heart rate and blood oxygen saturation (SpO₂) in real time. The system uses a MAX30100 optical sensor to detect changes in blood volume, an Arduino-compatible microcontroller for data processing, and an OLED display to present the measured values to the user. Additional features such as push-button input and LED indicators are included to improve usability and provide visual feedback.<br/><br/>The Arduino program is structured around the standard <code>setup()</code> and <code>loop()</code> functions. In <code>setup()</code>, serial communication is initialised for debugging, the MAX30100 pulse oximeter and OLED display are configured using I²C communication, and all input and output pins are defined. If either the sensor or display fails to initialise, the program halts to prevent incorrect operation.</p>
+<p>Within the <code>loop()</code> function, the pulse oximeter is continuously updated using a non-blocking approach. Heart rate and SpO₂ values are read at fixed time intervals using the <code>millis()</code> timer, allowing the program to remain responsive to user input. Two push buttons are read using software debouncing logic to avoid false triggering, enabling the user to cycle through multiple display modes.</p>
+<p>Separate functions are used to update the OLED display and control the status LEDs, improving code readability and modularity. Conditional statements are used to evaluate heart rate thresholds and provide visual feedback via LEDs.</p>
+    </section>
+
+    <section class="section">
+      <h2>Life cycle assessment of electronics devices</h2>
+
+<h5><strong>Product considered for LCA: </strong>Dual-Wavelength Pulse Oximeter</h5>
+<h5><strong>Birth of the produce: </strong></h5>
+<p>The birth of the electronic device begins with the extraction and processing of raw materials used in its components. The system consists primarily of an Arduino Nano, optical sensors, passive electronic components, LEDs, and an OLED display and a printed circuit board (PCB). These components rely on materials such as silicon for integrated circuits, copper for wiring and PCB traces, aluminium for component housings, and rare earth elements used in semiconductor fabrication. The extraction and refinement of these materials are energy-intensive processes that contribute significantly to CO₂ emissions, particularly in silicon wafer production and metal smelting.<br/>Manufacturing processes such as PCB fabrication, surface-mount assembly, and semiconductor packaging require high-temperature processing and clean-room environments, further increasing energy consumption. Additionally, global transportation of components from manufacturing facilities to assembly locations adds to the overall carbon footprint.</p>
+<hr/>
+<h5><strong>Life of the produce: </strong></h5>
+<p>During its operational life, the device has a relatively low environmental impact compared to its manufacturing phase. The system is designed for intermittent, low-power use and is typically powered via a USB supply or small external power source. The Arduino, sensor module, and OLED display consume minimal electrical power, resulting in a small ongoing CO₂ contribution associated with electricity generation.<br/>No consumable resources are required during normal operation, and the device does not produce emissions during use.<br/>The overall carbon footprint during this phase depends largely on duration of use and the energy mix of the electricity supply.</p>
+<hr/>
+<h5><strong>End of life: </strong></h5>
+<p>The device’s primary constituents - the Arduino Nano, MAX30100 sensor, and OLED display - are integrated in a manner that allows them to be removed at the end of the product’s life. These components are mounted using soldered pin headers rather than being permanently soldered to the PCB, enabling straightforward removal and potential reuse in future projects. This design choice reduces electronic waste and lowers the overall environmental impact by extending the functional lifespan of higher-value electronic components.</p>
+<p>The remaining components, including passive components and fixed wiring, are soldered directly onto the PCB and are therefore not intended for reuse. At the end of the device’s life, the PCB should be disposed of through appropriate electronic waste recycling channels. Recycling allows recovery of materials such as copper and other metals, reducing the demand for new raw material extraction and associated CO₂ emissions. While recycling processes consume energy, they typically result in a lower carbon footprint than manufacturing new electronic components from raw materials.</p>
+    </section>
+
+    <section class="section">
+      <h2>Skills mapping</h2>
+
+    </section>
+
+    <section class="section">
+      <h2>GenAI Acknowledgement</h2>
+
+<p>GenAI was not used in the preparation of this assignment.</p>
+    </section>
+
+    <section class="section">
+      <h2>Skills Claimed</h2>
+      <ul class="skills-list">
+        <li><strong>Circuit design & realisation</strong> — claimed at I am claiming this skill at ApplicationPlace feedbackCloseFeedback - Annotation: Circuit design & realisationClosePlace feedback</li>
+        <li><strong>Circuit simulation</strong> — claimed at I am claiming this skill at ApplicationPlace feedbackCloseFeedback - Annotation: Circuit simulationClosePlace feedback</li>
+        <li><strong>Embedded systems design</strong> — claimed at I am claiming this skill at ApplicationPlace feedbackCloseFeedback - Annotation: Embedded systems designClosePlace feedback</li>
+        <li><strong>Technical report writing</strong> — claimed at I am claiming this skill at ApplicationPlace feedbackCloseFeedback - Annotation: Technical report writingClosePlace feedback</li>
+        <li><strong>Life cycle assessment of electronic devices</strong> — claimed at I am claiming this skill at ApplicationPlace feedbackCloseFeedback - Annotation: Life cycle assessment of electronic devicesClosePlace feedback</li>
+        <li><strong>Datasheet creation</strong> — claimed at I am claiming this skill at ApplicationPlace feedbackCloseFeedback - Annotation: Datasheet creationClosePlace feedback</li>
+        <li><strong>Effective time management</strong> — claimed at I am claiming this skill at ApplicationPlace feedbackCloseFeedback - Annotation: Effective time managementClosePlace feedback</li>
+      </ul>
+    </section>
+
+    <a href="../index.html" style="display: inline-block; margin-top: 2rem;">← Back to Portfolio</a>
+  </main>
+</body>
+</html>

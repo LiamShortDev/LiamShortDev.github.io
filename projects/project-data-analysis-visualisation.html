@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Analysis & Visualisation - Liam Short Portfolio</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    main.project-page {
+      max-width: 720px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    ul.tech-stack {
+      list-style: disc;
+      margin-left: 1.5rem;
+    }
+
+    .github-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #007acc;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .github-link:hover {
+      text-decoration: underline;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .media-item {
+      margin: 0;
+      flex: 1 1 260px;
+      max-width: 100%;
+    }
+
+    .media-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      display: block;
+    }
+
+    .media-item figcaption {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 0.4rem;
+    }
+
+    .pdf-embed {
+      height: 500px;
+    }
+
+    .video-embed {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin-top: 1rem;
+    }
+
+    .video-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin-top: 0;
+    }
+
+    ul.skills-list {
+      list-style: disc;
+      margin-left: 1.5rem;
+      line-height: 1.6;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    table th,
+    table td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <main class="project-page">
+    <h1>Data Analysis & Visualisation</h1>
+
+    <section class="section">
+      <h2>Introduction</h2>
+
+<p>This page showcases <span>measuring and displaying the frequency response and cut-off frequencies of a bandpass filter.</span></p>
+    </section>
+
+    <section class="section">
+      <h2>Experimental setup</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/data-analysis-visualisation/562131-Screenshot 2026-03-13 134817.png" alt="Experimental setup" loading="lazy" />
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Description of Experiment</h2>
+
+<p>The experiment measured the frequency response of a band-pass filter by recording output voltage across a wide frequency range (10 Hz to 2 MHz) while maintaining a constant 1 V rms input. The gain was calculated directly from the output voltage and later converted into decibels using a normalised reference based on the maximum passband gain. A logarithmic frequency axis (Bode plot) was used to clearly visualise behaviour across multiple decades, as a linear scale compresses low-frequency data and obscures key trends.</p>
+<p>The results show a clear passband region between approximately 60 Hz and several hundred kHz, with attenuation occurring at both low and high frequencies, consistent with expected high-pass and low-pass filter behaviour. The cut-off frequencies were identified at the -3 dB points, where gain drops to approximately 0.707 of the maximum.</p>
+<p>Sources of uncertainty include component tolerances (resistors and capacitors), the 50 Ω internal resistance of the signal generator, measurement limitations of the digital multimeter, and slight inconsistencies in manual frequency adjustment. Despite these, the measured response closely matches theoretical predictions, validating the experimental method.</p>
+    </section>
+
+    <section class="section">
+      <h2>Purpose of Instrumentation Setup</h2>
+
+<p>The purpose of the instrumentation setup was to measure the frequency response of a band-pass filter and validate its performance against theoretical predictions. A waveform generator was used to supply a constant 1 V rms sinusoidal input over a wide frequency range, while a digital multimeter (DMM) measured the corresponding output voltage. By varying frequency and recording output amplitude, the gain of the filter could be determined. This allowed identification of the lower and upper cut-off frequencies and provided insight into how the circuit behaves across different operating conditions.</p>
+    </section>
+
+    <section class="section">
+      <h2>Measured vs expected values</h2>
+
+<p>The measured cut-off frequencies were found to be approximately 60 Hz and 600 kHz, which are in good agreement with the theoretical values calculated using \(f =\frac{1}{2\pi RC}\). Minor discrepancies can be attributed to component tolerances, particularly in the capacitor values, as well as the 50 Ω internal resistance of the waveform generator affecting the high-pass stage. Additional uncertainty arises from the limited resolution of the DMM and manual adjustment of frequency. Despite these factors, the overall agreement confirms the expected band-pass behaviour.</p>
+    </section>
+
+    <section class="section">
+      <h2>Advanced instrument feature</h2>
+
+<p>Measurement accuracy could be improved by using an oscilloscope instead of a DMM to observe the output signal directly. An oscilloscope allows real-time waveform visualisation and more precise amplitude measurement, particularly at higher frequencies where DMM accuracy decreases. Features such as signal averaging can reduce noise, and proper probe compensation ensures accurate voltage readings. Additionally, using peak-to-peak or RMS measurements directly from the oscilloscope would provide more reliable data and enable phase response analysis, giving a more complete understanding of the filter’s performance.</p>
+    </section>
+
+    <section class="section">
+      <h2>Graphed Results</h2>
+
+<p><img alt="" aria-hidden="" loading="lazy" role="" src="../../../export_info/files/562133-Graphs and Annotations.png.1.png.1" width="1087"/></p>
+<p>A Bode plot was used instead of a linear frequency scale because the data spans several orders of magnitude (10 Hz to 2 MHz). On a linear axis, lower-frequency behaviour is compressed and important features such as the lower cut-off frequency are difficult to observe. The logarithmic scale spreads the data more evenly, making trends clearer and allowing both cut-off frequencies and bandwidth to be identified accurately. This improves interpretation of the filter’s frequency response and aligns with standard engineering practice for analysing circuits over wide frequency ranges.</p>
+<p> </p>
+    </section>
+
+    <section class="section">
+      <h2>GenAI Acknowledgement Statement</h2>
+
+<p>GenAI was not used in the preparation of this assignment.</p>
+    </section>
+
+    <section class="section">
+      <h2>Skills Claimed</h2>
+      <ul class="skills-list">
+        <li><strong>Data analysis & Visualisation</strong> — claimed at I am claiming this skill at ApplicationPlace feedbackCloseFeedback - Annotation: Data analysis & VisualisationClosePlace feedback</li>
+        <li><strong>Electronic test & measurement</strong> — claimed at I am claiming this skill at ApplicationPlace feedbackCloseFeedback - Annotation: Electronic test & measurementClosePlace feedback</li>
+      </ul>
+    </section>
+
+    <a href="../index.html" style="display: inline-block; margin-top: 2rem;">← Back to Portfolio</a>
+  </main>
+</body>
+</html>

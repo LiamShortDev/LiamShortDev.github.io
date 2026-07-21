@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PW4 PCB Design - Liam Short Portfolio</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    main.project-page {
+      max-width: 720px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    ul.tech-stack {
+      list-style: disc;
+      margin-left: 1.5rem;
+    }
+
+    .github-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #007acc;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .github-link:hover {
+      text-decoration: underline;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .media-item {
+      margin: 0;
+      flex: 1 1 260px;
+      max-width: 100%;
+    }
+
+    .media-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      display: block;
+    }
+
+    .media-item figcaption {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 0.4rem;
+    }
+
+    .pdf-embed {
+      height: 500px;
+    }
+
+    .video-embed {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin-top: 1rem;
+    }
+
+    .video-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin-top: 0;
+    }
+
+    ul.skills-list {
+      list-style: disc;
+      margin-left: 1.5rem;
+      line-height: 1.6;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    table th,
+    table td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <main class="project-page">
+    <h1>PW4 PCB Design</h1>
+
+    <section class="section">
+      <h2>PCB Purpose</h2>
+
+<p>This PCB is designed to act as the driving and control interface for a modular side-illuminated display, inspired by Lixie-style LED displays. The board integrates an <strong>Arduino Nano ESP32</strong>, which serves as the central controller for the system, allowing individual segments of the display to be addressed and controlled programmatically. Each output channel consists of an LED driven via a transistor switching stage using BSS123 MOSFETs, enabling the microcontroller to safely control higher current loads required for illumination.</p>
+<p>The circuit includes multiple identical driver stages, allowing the design to be modular and scalable for displaying different characters or digits. Current-limiting resistors are used to protect the LEDs, while additional resistors ensure proper gate control of the MOSFETs. Decoupling capacitors are included to stabilise the 3.3V and 5V supply rails, ensuring reliable operation of the microcontroller and LEDs.</p>
+<p>Mounting holes and connectors are incorporated to allow easy integration into a physical display structure. Overall, the PCB provides a compact, reusable platform for controlling illuminated acrylic display elements in a visually appealing and electronically efficient manner.</p>
+    </section>
+
+    <section class="section">
+      <h2>PCB Schematic</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/pw4-pcb-design/551461-Screenshot 2026-04-17 163246.png.1" alt="PCB Schematic" loading="lazy" />
+        <figcaption>Screenshot 2026-04-17 163246.png.1</figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Electrical Rules Check Result</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/pw4-pcb-design/550776-Screenshot 2026-04-17 163524.png" alt="Electrical Rules Check Result" loading="lazy" />
+        <figcaption>Screenshot 2026-04-17 163524.png</figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>PCB Layout</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/pw4-pcb-design/566452-Screenshot 2026-04-26 015108.png" alt="PCB Layout" loading="lazy" />
+        <figcaption>Screenshot 2026-04-26 015108.png</figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Design Rules Check Result</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/pw4-pcb-design/550864-Screenshot 2026-04-17 163903.png" alt="Design Rules Check Result" loading="lazy" />
+        <figcaption>Screenshot 2026-04-17 163903.png</figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Bill of Materials</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/pw4-pcb-design/551451-Screenshot 2026-04-17 170717.png" alt="Bill of Materials" loading="lazy" />
+        <figcaption>Screenshot 2026-04-17 170717.png</figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>GenAI Acknowledgement Statement</h2>
+
+<p><span>GenAI was not used in the preparation of this assignment.</span></p>
+    </section>
+
+    <section class="section">
+      <h2>Skills mapping</h2>
+
+    </section>
+
+    <section class="section">
+      <h2>Skills Claimed</h2>
+      <ul class="skills-list">
+        <li><strong>PCB design</strong> — claimed at I am claiming this skill at ApplicationPlace feedbackCloseFeedback - Annotation: PCB designClosePlace feedback</li>
+      </ul>
+    </section>
+
+    <a href="../index.html" style="display: inline-block; margin-top: 2rem;">← Back to Portfolio</a>
+  </main>
+</body>
+</html>

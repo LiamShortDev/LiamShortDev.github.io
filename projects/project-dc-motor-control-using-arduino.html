@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DC motor control using Arduino - Liam Short Portfolio</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    main.project-page {
+      max-width: 720px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    ul.tech-stack {
+      list-style: disc;
+      margin-left: 1.5rem;
+    }
+
+    .github-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #007acc;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .github-link:hover {
+      text-decoration: underline;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .media-item {
+      margin: 0;
+      flex: 1 1 260px;
+      max-width: 100%;
+    }
+
+    .media-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      display: block;
+    }
+
+    .media-item figcaption {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 0.4rem;
+    }
+
+    .pdf-embed {
+      height: 500px;
+    }
+
+    .video-embed {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin-top: 1rem;
+    }
+
+    .video-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin-top: 0;
+    }
+
+    ul.skills-list {
+      list-style: disc;
+      margin-left: 1.5rem;
+      line-height: 1.6;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    table th,
+    table td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <main class="project-page">
+    <h1>DC motor control using Arduino</h1>
+
+    <section class="section">
+      <h2>Introduction</h2>
+
+<p>This page showcases the development of a DC motor controller using an arduino ESP32. </p>
+    </section>
+
+    <section class="section">
+      <h2>PID Controller</h2>
+      <div class="video-embed">
+        <iframe src="https://uniofbath.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=86dd3b58-5538-4722-848a-b37d00d4b235&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=false&interactivity=all" allowfullscreen allow="autoplay"></iframe>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Advanced Tasks</h2>
+
+<p>This circuit uses a potentiometer as a single control input to manage both the direction and speed of a DC motor through an Arduino Nano ESP32 and a motor driver board. The potentiometer is wired as a voltage divider, with its output connected to an analog input pin. The microcontroller continuously reads this value and divides it into three regions. When the potentiometer is turned to the lower range, the Arduino commands the motor driver to rotate the motor in reverse, applying a PWM signal to control speed based on how far the knob is turned. In the central range, the input falls within a dead zone, and the Arduino disables the motor driver outputs, bringing the motor to a stop. When the potentiometer is turned to the upper range, the motor rotates forwards, again with speed proportional to the potentiometer position. The motor driver board allows safe control of the motor by handling higher currents and providing direction switching, while the Arduino processes the analog input and generates the appropriate control signals.</p>
+    </section>
+
+    <section class="section">
+      <h2>Hardware</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/dc-motor-control-using-arduino/436803-IMG_8471.jpeg" alt="Hardware" loading="lazy" />
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Wiring Diagram</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/dc-motor-control-using-arduino/543553-Screenshot 2026-04-15 214908.png" alt="Wiring Diagram" loading="lazy" />
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Arduino Code</h2>
+      <iframe src="./assets/dc-motor-control-using-arduino/436798-Arduino Code for motor controller.pdf" class="pdf-embed" allow="fullscreen"></iframe>
+      <p><a href="./assets/dc-motor-control-using-arduino/436798-Arduino Code for motor controller.pdf" class="github-link" target="_blank">View / Download PDF →</a></p>
+    </section>
+
+    <section class="section">
+      <h2>Initial Tasks</h2>
+      <div class="video-embed">
+        <iframe src="https://uniofbath.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=86dd3b58-5538-4722-848a-b37d00d4b235&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=false&interactivity=all" allowfullscreen allow="autoplay"></iframe>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>GenAI Acknowledgement Statement</h2>
+
+<p>GenAI was not used in the preparation of this assignment.</p>
+    </section>
+
+    <section class="section">
+      <h2>Skills Claimed</h2>
+      <ul class="skills-list">
+        <li><strong>Embedded systems design</strong> — claimed at I am claiming this skill at ApplicationPlace feedbackCloseFeedback - Annotation: Embedded systems designClosePlace feedback</li>
+      </ul>
+    </section>
+
+    <a href="../index.html" style="display: inline-block; margin-top: 2rem;">← Back to Portfolio</a>
+  </main>
+</body>
+</html>

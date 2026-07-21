@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Additive Manufacturing - Liam Short Portfolio</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    main.project-page {
+      max-width: 720px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    ul.tech-stack {
+      list-style: disc;
+      margin-left: 1.5rem;
+    }
+
+    .github-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #007acc;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .github-link:hover {
+      text-decoration: underline;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .media-item {
+      margin: 0;
+      flex: 1 1 260px;
+      max-width: 100%;
+    }
+
+    .media-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      display: block;
+    }
+
+    .media-item figcaption {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 0.4rem;
+    }
+
+    .pdf-embed {
+      height: 500px;
+    }
+
+    .video-embed {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin-top: 1rem;
+    }
+
+    .video-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin-top: 0;
+    }
+
+    ul.skills-list {
+      list-style: disc;
+      margin-left: 1.5rem;
+      line-height: 1.6;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    table th,
+    table td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <main class="project-page">
+    <h1>Additive Manufacturing</h1>
+
+    <section class="section">
+      <h2>Introduction</h2>
+
+    </section>
+
+    <section class="section">
+      <h2>Sliced Holder</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/additive-manufacturing/493595-Screenshot 2026-02-17 134258.png" alt="Sliced Holder" loading="lazy" />
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Holder Gcode</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/additive-manufacturing/493596-Screenshot 2026-02-17 134355.png" alt="Holder Gcode" loading="lazy" />
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Slicing reflection</h2>
+
+<p>Automatic support generation was enabled initially to identify areas with critical overhangs that would fail without support. These automatically generated supports were then manually refined, with additional supports added to outer curved surfaces where deformation or collapse was likely due to shallow overhang angles. This ensured structural stability during printing while maintaining dimensional accuracy.</p>
+<p>Supports were intentionally removed from the internal cylindrical surfaces. Supporting these regions would have negatively impacted surface quality due to support scarring and would have required post-processing, potentially affecting the part’s fit and function. Surface quality is important for these areas as they need to mechanically fit with other parts.</p>
+<p>A brim was applied to the support structures to improve bed adhesion and prevent support failure during printing, particularly for tall or narrow support columns. The main part itself did not require a brim, as it has a large flat contact area with the print bed, providing sufficient adhesion on its own. </p>
+    </section>
+
+    <section class="section">
+      <h2>Full Gcode</h2>
+      <iframe src="./assets/additive-manufacturing/493634-GCODE.pdf" class="pdf-embed" allow="fullscreen"></iframe>
+      <p><a href="./assets/additive-manufacturing/493634-GCODE.pdf" class="github-link" target="_blank">View / Download PDF →</a></p>
+    </section>
+
+    <section class="section">
+      <h2>Sliced Magnetic Holder</h2>
+      <div class="image-gallery">
+      <figure class="media-item">
+        <img src="./assets/additive-manufacturing/510263-Screenshot 2026-03-13 041602.png" alt="Sliced Magnetic Holder" loading="lazy" />
+      </figure>
+      <figure class="media-item">
+        <img src="./assets/additive-manufacturing/510264-Screenshot 2026-03-13 041712.png" alt="Sliced Magnetic Holder" loading="lazy" />
+      </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Slicing reflection</h2>
+
+<p>The two mission-critical features that require the highest print quality are located on opposing faces. As a result, one of these faces must be placed on the print bed. Of the two features, the countersunk hole has a gradual overhang angle compared to the recessed circular cut, making it the better candidate to be oriented against the print bed.</p>
+<p>The remaining features contain steep overhangs and therefore require support structures. With this orientation, supports that extend upward from the build plate are used to support the 90° overhangs present in these features.</p>
+<p>The central cuboid hole, which passes through the entire length of the part, is internally filled with support structures. These supports originate from the opening in the build plate and extend upward through the cavity without attaching to the surrounding internal walls.</p>
+    </section>
+
+    <section class="section">
+      <h2>GenAI Acknowledgement</h2>
+
+<div class="block" id="user_blockinstance_904193_target">
+<div class="blockinstructions first last form-group collapsible-group small-group">GenAI was not used in the preparation of this assignment.</div>
+</div>
+    </section>
+
+    <section class="section">
+      <h2>Skills mapping</h2>
+
+    </section>
+
+    <section class="section">
+      <h2>Skills Claimed</h2>
+      <ul class="skills-list">
+        <li><strong>Additive manufacturing</strong> — claimed at I am claiming this skill at ApplicationPlace feedbackCloseFeedback - Annotation: Additive manufacturingClosePlace feedback</li>
+      </ul>
+    </section>
+
+    <a href="../index.html" style="display: inline-block; margin-top: 2rem;">← Back to Portfolio</a>
+  </main>
+</body>
+</html>
