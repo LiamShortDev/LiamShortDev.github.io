@@ -28,9 +28,9 @@ h2 {
 
 /* Grid layout for project cards */
 .project-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  flex-wrap: wrap;
 }
 
 /* Project card styling */
