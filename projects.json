@@ -7,7 +7,8 @@
     ],
     "description": "ESP32-controlled robot that moves chess pieces magnetically.",
     "image": "thumbnails/chess-thumb.jpg",
-    "link": "projects/project-chess.html"
+    "link": "projects/project-chess.html",
+    "hidden": true
   },
   {
     "title": "3D Renderer",
@@ -29,30 +30,12 @@
     "link": "projects/project-cubetrainer.html"
   },
   {
-    "title": "Multiplexer Chess Grid",
-    "category": [
-      "engineering"
-    ],
-    "description": "8x8 reed switch input grid controlled by ESP32.",
-    "image": "thumbnails/grid-thumb.jpg",
-    "link": "projects/project-reedswitch.html"
-  },
-  {
-    "title": "Minecraft - Discord Bridge",
-    "category": [
-      "cs"
-    ],
-    "description": "Discord Bot that bridges minecraft and discord chat",
-    "image": "thumbnails/grid-thumb.jpg",
-    "link": "projects/project-lsc.html"
-  },
-  {
     "title": "Grimrr",
     "category": [
       "cs"
     ],
     "description": "Hypixel guild utility bot for discord",
-    "image": "thumbnails/grid-thumb.jpg",
+    "image": "thumbnails/grimrr-thumb.png",
     "link": "projects/project-grimrr.html"
   },
   {
@@ -68,29 +51,22 @@
   {
     "title": "Acrylic Weather Display",
     "category": [
-      "uni-1st-year"
+      "uni-1st-year",
+      "engineering"
     ],
     "description": "ESP32-based weather display in a laser-cut acrylic case, covering PCB, CAD, and sustainability analysis.",
-    "image": "thumbnails/acrylic-weather-display-thumb.jpg",
+    "image": "projects/assets/WeatherDisplayFinal.jpg",
     "link": "projects/project-acrylic-weather-display.html"
   },
   {
     "title": "Additive Manufacturing",
     "category": [
-      "uni-1st-year"
+      "uni-1st-year",
+      "engineering"
     ],
     "description": "3D printing exploration covering support generation and print refinement.",
-    "image": "thumbnails/additive-manufacturing-thumb.jpg",
+    "image": "projects/assets/493595-Screenshot 2026-02-17 134258.png",
     "link": "projects/project-additive-manufacturing.html"
-  },
-  {
-    "title": "BEATRIX",
-    "category": [
-      "uni-1st-year"
-    ],
-    "description": "Programming project on the BEATRIX robot platform.",
-    "image": "thumbnails/beatrix-thumb.jpg",
-    "link": "projects/project-beatrix.html"
   },
   {
     "title": "Build MATLAB Proficiency",
@@ -98,7 +74,7 @@
       "uni-1st-year"
     ],
     "description": "Certificate and reflections from completing the Build MATLAB Proficiency learning path.",
-    "image": "thumbnails/build-matlab-proficiency-thumb.jpg",
+    "image": "projects/assets/MATLABProficiencyCertificate.png",
     "link": "projects/project-build-matlab-proficiency.html"
   },
   {
@@ -107,7 +83,7 @@
       "uni-1st-year"
     ],
     "description": "Multi-part assembly modelled in Autodesk Inventor.",
-    "image": "thumbnails/cad-assembly-thumb.jpg",
+    "image": "projects/assets/474660-Screenshot 2026-01-10 225557.png",
     "link": "projects/project-cad-assembly.html"
   },
   {
@@ -116,17 +92,8 @@
       "uni-1st-year"
     ],
     "description": "Engineering drawing produced in Autodesk Inventor.",
-    "image": "thumbnails/cad-drawing-thumb.jpg",
+    "image": "projects/assets/LegoAssemblyDrawings.png",
     "link": "projects/project-cad-drawing.html"
-  },
-  {
-    "title": "CPD",
-    "category": [
-      "uni-1st-year"
-    ],
-    "description": "Personal reflections on what engineering means and continuing professional development.",
-    "image": "thumbnails/cpd-thumb.jpg",
-    "link": "projects/project-cpd.html"
   },
   {
     "title": "Data Analysis & Visualisation",
@@ -134,7 +101,7 @@
       "uni-1st-year"
     ],
     "description": "Measuring and visualising the frequency response and cut-off frequencies of a bandpass filter.",
-    "image": "thumbnails/data-analysis-visualisation-thumb.jpg",
+    "image": "projects/assets/562131-Screenshot 2026-03-13 134817.png",
     "link": "projects/project-data-analysis-visualisation.html"
   },
   {
@@ -143,7 +110,7 @@
       "uni-1st-year"
     ],
     "description": "DC motor controller built using an Arduino ESP32.",
-    "image": "thumbnails/dc-motor-control-using-arduino-thumb.jpg",
+    "image": "projects/assets/543553-Screenshot 2026-04-15 214908.png",
     "link": "projects/project-dc-motor-control-using-arduino.html"
   },
   {
@@ -152,34 +119,37 @@
       "uni-1st-year"
     ],
     "description": "Standoff-mounted ESP32 enclosure designed in Autodesk Inventor.",
-    "image": "thumbnails/designing-an-arduino-case-thumb.jpg",
+    "image": "projects/assets/436338-Screenshot 2025-10-17 211220.png",
     "link": "projects/project-designing-an-arduino-case.html"
   },
   {
     "title": "Digital Health Monitoring",
     "category": [
-      "uni-1st-year"
+      "uni-1st-year",
+      "engineering"
     ],
     "description": "Design, build, and test of a pulse oximeter, with an accompanying datasheet.",
-    "image": "thumbnails/digital-health-monitoring-thumb.jpg",
+    "image": "projects/assets/479763-IMG_9424.jpeg",
     "link": "projects/project-digital-health-monitoring.html"
   },
   {
     "title": "Energy Harvesting Challenge",
     "category": [
-      "uni-1st-year"
+      "uni-1st-year",
+      "engineering"
     ],
     "description": "Staged design and build of an energy harvesting system, from planning to testing.",
-    "image": "thumbnails/energy-harvesting-challenge-thumb.jpg",
+    "image": "projects/assets/566454-Screenshot 2026-04-26 021541.png",
     "link": "projects/project-energy-harvesting-challenge.html"
   },
   {
     "title": "F1 Timing Replay",
     "category": [
-      "uni-1st-year"
+      "uni-1st-year",
+      "cs"
     ],
     "description": "MATLAB script that replays the past 4 F1 seasons second-by-second for any track.",
-    "image": "thumbnails/f1-timing-replay-thumb.jpg",
+    "image": "projects/assets/F1Replay.png",
     "link": "projects/project-f1-timing-replay.html"
   },
   {
@@ -188,34 +158,37 @@
       "uni-1st-year"
     ],
     "description": "Full adder built from half adder modules, simulated and programmed onto an FPGA.",
-    "image": "thumbnails/hdl-full-adder-thumb.jpg",
+    "image": "projects/assets/542184-Evidence A.png",
     "link": "projects/project-hdl-full-adder.html"
   },
   {
     "title": "PCB Assembly",
     "category": [
-      "uni-1st-year"
+      "uni-1st-year",
+      "engineering"
     ],
     "description": "Hand-soldered PCB with reflections on solder joint quality.",
-    "image": "thumbnails/pcb-assembly-thumb.jpg",
+    "image": "projects/assets/585891-Jab1.png",
     "link": "projects/project-pcb-assembly.html"
   },
   {
     "title": "Programming in MATLAB",
     "category": [
-      "uni-1st-year"
+      "uni-1st-year",
+      "cs"
     ],
     "description": "MATLAB function that extracts dominant frequency components from noisy time-series signals.",
-    "image": "thumbnails/programming-in-matlab-thumb.jpg",
+    "image": "projects/assets/Screenshot 2026-08-17 214323.png",
     "link": "projects/project-programming-in-matlab.html"
   },
   {
-    "title": "PW4 PCB Design",
+    "title": "Weather Display PCB Design",
     "category": [
-      "uni-1st-year"
+      "uni-1st-year",
+      "engineering"
     ],
     "description": "PCB driving and control interface for a Lixie-style side-illuminated display, built around an Arduino Nano ESP32.",
-    "image": "thumbnails/pw4-pcb-design-thumb.jpg",
+    "image": "projects/assets/566452-Screenshot 2026-04-26 015108.png",
     "link": "projects/project-pw4-pcb-design.html"
   },
   {
@@ -224,7 +197,7 @@
       "uni-1st-year"
     ],
     "description": "First-year PCB design project covering schematic capture, layout, and design rule checks.",
-    "image": "thumbnails/y1-pcb-design-skill-thumb.jpg",
+    "image": "projects/assets/550226-Screenshot 2026-04-17 161650.png",
     "link": "projects/project-y1-pcb-design-skill.html"
   }
 ]

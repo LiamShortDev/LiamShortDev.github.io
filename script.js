@@ -3,6 +3,7 @@ fetch('projects.json')
   .then(response => response.json())
   .then(data => {
     data.forEach(project => {
+      if (project.hidden) return; // Skip hidden projects
       const card = document.createElement('a');
       card.className = 'project-card';
       card.href = project.link;
