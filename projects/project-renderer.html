@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3D Renderer - Liam Short Portfolio</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    main.project-page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+.project-header {
+  margin-bottom: 35px;
+}
+
+.project-header h1 {
+  margin-bottom: 10px;
+}
+
+.project-meta {
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.project-links a {
+  display: inline-block;
+  padding: 9px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  background: #222;
+  color: white;
+}
+
+.project-links a:hover {
+  opacity: 0.85;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #007acc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.project-page h2 {
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.project-page ul {
+  padding-left: 22px;
+}
+
+.project-page li {
+  margin-bottom: 8px;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+}
+
+.tech-list li {
+  background: #f0f0f0;
+  padding: 6px 10px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.project-image {
+  width: 100%;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.highlight {
+  padding: 16px 18px;
+  background: #f5f5f5;
+  border-left: 4px solid #333;
+  margin: 25px 0;
+}
+  </style>
+</head>
+
+<body>
+
+<main class="project-page">
+
+  <section class="project-header">
+    <h1>3D Renderer</h1>
+  </section>
+
+  <h2>Overview</h2>
+
+  <p>
+    This project was created to develop a deeper understanding of how 3D
+    graphics are produced from mathematical representations of objects.
+    Rather than relying on an existing game engine or high-level 3D rendering
+    framework, I implemented the core rendering process myself.
+  </p>
+
+  <p>
+    The project takes 3D geometry, applies transformations and camera
+    calculations, and converts it into a 2D representation that can be
+    displayed on screen.
+  </p>
+
+  <div class="highlight">
+    <strong>Key focus:</strong> understanding the mathematics and underlying
+    implementation of a 3D graphics pipeline rather than simply using an
+    existing rendering engine.
+  </div>
+
+  <h2>3D Transformations</h2>
+
+  <p>
+    The renderer uses mathematical transformations to manipulate objects within
+    3D space. Objects can be translated, rotated and scaled before being
+    transformed into the camera's coordinate system.
+  </p>
+
+  <p>
+    This involved working with vectors and matrices to represent the position
+    and orientation of objects and apply transformations efficiently.
+  </p>
+
+  <h2>Projection</h2>
+
+  <p>
+    A major part of the project was converting 3D coordinates into positions
+    on a 2D screen. Perspective projection is used so that objects appear
+    smaller as their distance from the camera increases.
+  </p>
+
+  <p>
+    Implementing this process helped me understand how concepts such as field
+    of view, camera position and depth affect the final image produced by a
+    renderer.
+  </p>
+
+  <h2>Rendering Pipeline</h2>
+
+  <p>
+    The renderer follows the fundamental stages required to turn geometric
+    data into a visible image. Geometry is transformed through the 3D scene,
+    projected onto the screen and then rendered as part of the final image.
+  </p>
+
+  <p>
+    Building these stages manually provided practical experience with the
+    relationship between mathematical models, coordinate systems and graphical
+    output.
+  </p>
+
+  <h2>What I Learned</h2>
+
+  <ul>
+    <li>Applying vector and matrix mathematics to a practical engineering problem</li>
+    <li>Working with 3D coordinate systems and transformations</li>
+    <li>Understanding perspective projection and camera geometry</li>
+    <li>Structuring a larger C# application across multiple classes and source files</li>
+    <li>Understanding the fundamentals of software-based 3D rendering</li>
+    <li>Debugging mathematical and graphical problems where errors are often not immediately visible</li>
+  </ul>
+
+  <h2>Technologies</h2>
+
+  <ul class="tech-list">
+    <li>C#</li>
+    <li>.NET</li>
+    <li>Visual Studio</li>
+    <li>2D Mathematics</li>
+    <li>Linear Algebra</li>
+    <li>Computer Graphics</li>
+    <li>Computational Shaders</li>
+  </ul>
+
+    <section class="section">
+      <h2>GitHub Repository</h2>
+      <!-- Replace the URL once the repository is uploaded. -->
+      <a
+        href="https://github.com/LiamShortDev/3D-Renderer"
+        target="_blank"
+        class="link"
+        rel="noopener noreferrer">
+        View the Code on GitHub →
+      </a>
+    </section>
+
+  <a href="../index.html" style="display: inline-block; margin-top: 2rem;">← Back to Portfolio</a>
+</main>
+
+</body>
+</html>

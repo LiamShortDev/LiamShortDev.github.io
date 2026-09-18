@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>2D Fluid Simulation GPU - Liam Short Portfolio</title>
+  <link rel="stylesheet" href="../style.css" />
+
+  <style>
+    main.project-page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .project-header {
+      margin-bottom: 35px;
+    }
+
+    .project-header h1 {
+      margin-bottom: 8px;
+    }
+
+    .project-subtitle {
+      color: #666;
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }    
+    
+    .link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #007acc;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .link:hover {
+      text-decoration: underline;
+    }
+
+    .project-section {
+      margin-top: 35px;
+    }
+
+    .project-section h2 {
+      margin-bottom: 12px;
+    }
+
+    .project-section p {
+      line-height: 1.65;
+    }
+
+    .project-section ul {
+      padding-left: 20px;
+      line-height: 1.7;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tech-list li {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 0.9rem;
+    }
+
+    .project-image {
+      width: 100%;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .highlight {
+      border-left: 3px solid #888;
+      padding-left: 15px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="project-page">
+
+    <header class="project-header">
+      <h1>2D Fluid Simulation GPU</h1>
+
+      <p class="project-subtitle">
+        GPU-accelerated real-time fluid simulation using C#, OpenTK and compute shaders.
+      </p>
+    </header>
+
+    <video class="project-image" controls autoplay muted loop playsinline>
+      <source src="assets/Fluid Sim Demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <section class="project-section">
+      <h2>Overview</h2>
+
+      <p>
+        A real-time 2D fluid simulation developed in C# using OpenTK and
+        GPU compute shaders. The project explores numerical fluid simulation
+        techniques while using the GPU to perform computationally intensive
+        operations in parallel.
+      </p>
+
+      <p>
+        The simulation models the behaviour of an incompressible fluid on a
+        two-dimensional grid, allowing fluid motion and interactions to be
+        visualised in real time.
+      </p>
+    </section>
+
+
+    <section class="project-section">
+      <h2>Key Features</h2>
+
+      <ul>
+        <li>Real-time 2D fluid simulation running on the GPU.</li>
+        <li>Custom rendering using OpenTK.</li>
+        <li>GPU compute shaders for computationally intensive simulation steps.</li>
+        <li>Diffusion and pressure calculations performed in parallel.</li>
+        <li>Interactive simulation allowing the user to influence the fluid.</li>
+        <li>Custom numerical methods for solving the fluid equations.</li>
+      </ul>
+    </section>
+
+
+    <section class="project-section">
+      <h2>GPU Compute</h2>
+
+      <p>
+        One of the main goals of the project was to move the expensive
+        calculations away from the CPU and onto the GPU. The simulation uses
+        compute shaders to perform operations across the simulation grid in
+        parallel.
+      </p>
+
+      <div class="highlight">
+        <strong>Why GPU acceleration?</strong>
+        <br />
+        Fluid simulation involves repeatedly performing similar calculations
+        across large numbers of grid cells. This makes the problem well suited
+        to the highly parallel architecture of a modern GPU.
+      </div>
+
+      <p>
+        Diffusion and pressure-solving operations are implemented using
+        compute shaders, reducing the amount of work that needs to be handled
+        sequentially by the CPU.
+      </p>
+    </section>
+
+
+    <section class="project-section">
+      <h2>Fluid Simulation</h2>
+
+      <p>
+        The simulation represents the fluid using a two-dimensional grid.
+        Physical quantities such as velocity and pressure are calculated over
+        the grid and repeatedly updated to produce the resulting fluid motion.
+      </p>
+
+      <p>
+        A key part of the implementation is the pressure solve. The pressure
+        field is calculated to enforce the incompressibility constraint,
+        producing a velocity field that more closely represents the behaviour
+        of an incompressible fluid.
+      </p>
+    </section>
+
+
+    <section class="project-section">
+      <h2>Technical Challenges</h2>
+
+      <ul>
+        <li>
+          Designing a GPU-based architecture where simulation data could be
+          processed efficiently in parallel.
+        </li>
+
+        <li>
+          Translating numerical algorithms into compute-shader implementations
+          while maintaining stable simulation behaviour.
+        </li>
+
+        <li>
+          Managing data between the C# application, OpenGL and GPU buffers.
+        </li>
+
+        <li>
+          Balancing simulation accuracy, stability and real-time performance.
+        </li>
+
+        <li>
+          Debugging issues across both CPU-side C# code and GPU-side shader code.
+        </li>
+      </ul>
+    </section>
+
+
+    <section class="project-section">
+      <h2>What I Learned</h2>
+
+      <ul>
+        <li>GPU parallel programming and compute shaders.</li>
+        <li>Numerical methods used in fluid simulation.</li>
+        <li>OpenGL rendering through OpenTK.</li>
+        <li>Working with GPU buffers and simulation state.</li>
+        <li>Performance considerations when designing real-time simulations.</li>
+        <li>Debugging complex interactions between CPU and GPU code.</li>
+      </ul>
+    </section>
+
+
+    <section class="project-section">
+      <h2>Technologies</h2>
+
+      <ul class="tech-list">
+        <li>C#</li>
+        <li>.NET 8</li>
+        <li>OpenTK</li>
+        <li>OpenGL</li>
+        <li>GLSL</li>
+        <li>Compute Shaders</li>
+        <li>GPU Programming</li>
+        <li>Numerical Simulation</li>
+      </ul>
+    </section>
+
+
+    <section class="section">
+      <h2>GitHub Repository</h2>
+      <!-- Replace the URL once the repository is uploaded. -->
+      <a
+        href="https://github.com/LiamShortDev/2D-Fluid-Sim-GPU"
+        target="_blank"
+        class="link"
+        rel="noopener noreferrer">
+        View the Code on GitHub →
+      </a>
+    </section>
+    <a href="../index.html" style="display: inline-block; margin-top: 2rem;">← Back to Portfolio</a>
+  </main>
+
+</body>
+</html>

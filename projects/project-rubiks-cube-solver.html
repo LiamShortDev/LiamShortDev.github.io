@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rubik's Cube Solver & Trainer - Liam Short Portfolio</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    main.project-page {
+      max-width: 720px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .media-item {
+      margin: 0;
+      flex: 1 1 260px;
+      max-width: 100%;
+    }
+
+    .media-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      display: block;
+    }
+
+    .media-item figcaption {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 0.4rem;
+    }
+
+    .media-placeholder {
+      width: 100%;
+      min-height: 220px;
+      box-sizing: border-box;
+      border: 2px dashed #bbb;
+      border-radius: 8px;
+      background: #f7f7f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .video-placeholder {
+      min-height: 360px;
+    }
+
+    .pdf-embed {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #007acc;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .link:hover {
+      text-decoration: underline;
+    }
+
+    ul.tech-stack,
+    ul.project-list {
+      list-style: disc;
+      margin-left: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      border-left: 3px solid #007acc;
+      padding-left: 1rem;
+      margin: 1rem 0;
+    }
+
+    code {
+      background: #f2f2f2;
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <main class="project-page">
+
+    <h1>Rubik's Cube Solver &amp; Trainer</h1>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/zXM_dtFisdk?si=BMFL89DtZcSugdcm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <section class="section">
+      <h2>Introduction</h2>
+      <p>
+        A desktop application developed as an A-Level Computer Science project to
+        help users learn and practise Rubik's Cube solving algorithms. Rather than
+        simply finding a short solution, the application teaches the cube using the
+        human CFOP method and provides tools for learning, practising and applying
+        algorithms.
+      </p>
+      <p>
+        The project combines a custom Rubik's Cube state model, 2D geometric
+        rendering, heuristic search, algorithm recognition, a local database and
+        an interactive Windows interface.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Tech Stack</h2>
+      <ul class="tech-stack">
+        <li>C#</li>
+        <li>Windows Forms (WinForms)</li>
+        <li>Object-Oriented Programming</li>
+        <li>Custom 2D / Isometric Cube Rendering</li>
+        <li>Microsoft Access / OleDb Database</li>
+        <li>SHA-256 Password Hashing</li>
+        <li>IDA* Heuristic Search</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>The Application</h2>
+
+      <!--
+        IMAGE PLACEHOLDER
+        Recommended image: clean, high-resolution screenshot of the main
+        application/playground showing the digital cube, scramble controls,
+        Trainer and CFOP Solver options.
+      -->
+      <div class="image-gallery">
+        <figure class="media-item">
+          <div class="media-placeholder">
+            <div>
+              <strong>IMAGE PLACEHOLDER: Main Application</strong><br />
+              Replace with a clean screenshot of the main playground / menu.
+              <br />
+              Show the digital cube and the main Scramble, Trainer and CFOP Solver controls.
+            </div>
+          </div>
+          <figcaption>Main application environment</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        The application provides a digital cube that can be manipulated using
+        standard face-move controls. Users can generate a 20-move scramble,
+        create a new cube, recolour tiles, save and load cube states, and access
+        the trainer or CFOP solver.
+      </p>
+
+      <p>
+        Cube validation prevents invalid states from being passed into the solver,
+        while user-specific data can be saved locally for later use.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Solving with CFOP</h2>
+
+      <!--
+        IMAGE PLACEHOLDER
+        Recommended image: clean screenshot of the CFOP solver showing the
+        available solving stages. Ideally capture a state where the stage
+        progression is obvious.
+      -->
+      <div class="image-gallery">
+        <figure class="media-item">
+          <div class="media-placeholder">
+            <div>
+              <strong>IMAGE PLACEHOLDER: CFOP Solver</strong><br />
+              Replace with a screenshot showing the CFOP solving interface.
+              <br />
+              Ideally show: White Cross → F2L → OLL 1st Look → OLL 2nd Look →
+              PLL 1st Look → PLL 2nd Look.
+            </div>
+          </div>
+          <figcaption>CFOP solving stages</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        The solver is designed around the human CFOP method rather than a generic
+        shortest-path solution. Each stage is completed before the next becomes
+        available, allowing the generated solution to be followed and understood.
+      </p>
+
+      <ul class="project-list">
+        <li><strong>White Cross:</strong> heuristic IDA* search is used to find a move sequence for the cross.</li>
+        <li><strong>F2L:</strong> edge and corner pairs are identified and matched against stored algorithms.</li>
+        <li><strong>OLL:</strong> cases are detected and solved using first- and second-look algorithms.</li>
+        <li><strong>PLL:</strong> permutation cases are detected and solved using first- and second-look algorithms.</li>
+      </ul>
+
+      <div class="highlight">
+        The important design decision was to optimise for a solution that is
+        understandable to a human CFOP learner, rather than simply minimising
+        the total number of moves.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Cube State &amp; Move System</h2>
+
+      <!--
+        IMAGE / DIAGRAM PLACEHOLDER
+        Recommended custom diagram to create later:
+        Cube state arrays → face/layer rotation → updated sticker positions →
+        rendered cube.
+        This should be your own diagram rather than an extracted report graphic.
+      -->
+      <div class="image-gallery">
+        <figure class="media-item">
+          <div class="media-placeholder">
+            <div>
+              <strong>DIAGRAM PLACEHOLDER: Cube State Pipeline</strong><br />
+              Create a simple technical diagram showing how sticker/tile arrays
+              represent the cube and how a move updates the state before rendering.
+            </div>
+          </div>
+          <figcaption>Cube state representation and move processing</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        The cube is represented internally using arrays of coloured tiles. Face
+        rotations and layer movements modify this state, allowing the same
+        representation to drive both the solver and the visual display.
+      </p>
+
+      <p>
+        Standard Rubik's Cube notation is used throughout the application, keeping
+        the generated solutions compatible with conventional CFOP learning.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>2D Cube Rendering</h2>
+
+      <!--
+        IMAGE PLACEHOLDER
+        Recommended image: a clean screenshot of the digital cube, preferably
+        showing the isometric projection clearly.
+      -->
+      <div class="image-gallery">
+        <figure class="media-item">
+          <div class="media-placeholder">
+            <div>
+              <strong>IMAGE PLACEHOLDER: Isometric Cube Rendering</strong><br />
+              Replace with a clean close-up screenshot of the rendered cube.
+              <br />
+              A labelled technical graphic showing the projection geometry would
+              also work well here.
+            </div>
+          </div>
+          <figcaption>Custom 2D isometric cube renderer</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        Instead of using a dedicated 3D graphics engine, the cube was rendered as
+        a 2D isometric projection. Polygon geometry was calculated using
+        trigonometry to position the visible stickers and construct the cube faces.
+      </p>
+
+      <p>
+        This approach kept the project within scope while giving complete control
+        over how cube rotations and sticker colours were displayed.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Heuristic Search</h2>
+
+      <!--
+        DIAGRAM PLACEHOLDER
+        Recommended custom graphic:
+        Start state → depth bound → heuristic estimate → candidate moves →
+        goal test → increase bound → solution.
+        Keep this as a simple engineering-style diagram rather than a code screenshot.
+      -->
+      <div class="image-gallery">
+        <figure class="media-item">
+          <div class="media-placeholder">
+            <div>
+              <strong>DIAGRAM PLACEHOLDER: IDA* Search</strong><br />
+              Create a simple diagram explaining the iterative-deepening search
+              and heuristic used for the White Cross.
+            </div>
+          </div>
+          <figcaption>IDA* search for the White Cross</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        The White Cross solver uses Iterative Deepening A* (IDA*). The algorithm
+        combines iterative depth limits with a heuristic estimate of the remaining
+        moves, reducing memory usage compared with a conventional A* search.
+      </p>
+
+      <p>
+        The heuristic does not guarantee a globally optimal solution, but provides
+        a practical balance between search efficiency and move count for the
+        intended CFOP workflow.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Algorithm Trainer</h2>
+
+      <!--
+        IMAGE PLACEHOLDER
+        Recommended image: trainer screen showing an algorithm case and the
+        corresponding move sequence / cube state.
+      -->
+      <div class="image-gallery">
+        <figure class="media-item">
+          <div class="media-placeholder">
+            <div>
+              <strong>IMAGE PLACEHOLDER: Algorithm Trainer</strong><br />
+              Replace with a clean screenshot of the trainer showing a cube case,
+              algorithm notation and the playback / practice controls.
+            </div>
+          </div>
+          <figcaption>Algorithm training interface</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        The trainer allows users to browse and practise stored CFOP algorithms.
+        Standard algorithms and user-defined algorithms can be stored and selected,
+        with the cube state and notation used to demonstrate when an algorithm
+        should be applied.
+      </p>
+
+      <p>
+        This makes the trainer more than a static algorithm list: the user can
+        connect a recognised cube case with the notation and the resulting sequence
+        of moves.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Data &amp; Security</h2>
+      <p>
+        A local Microsoft Access database stores user and algorithm data, allowing
+        the application to operate offline. Usernames are used to associate saved
+        data with individual accounts, while passwords are stored as salted SHA-256
+        hashes rather than plain text.
+      </p>
+
+      <p>
+        The database also provides a flexible way to store the CFOP algorithms,
+        allowing the trainer to be extended without changing the core application
+        logic.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Testing &amp; Validation</h2>
+      <p>
+        The application was tested across its main functional areas, including
+        login, navigation, cube manipulation, scrambling, saving and loading,
+        cube validation, algorithm training and solver behaviour.
+      </p>
+
+      <p>
+        Testing was also used to identify and correct implementation issues. For
+        example, a scramble test identified that the program could generate 21
+        moves instead of the required 20, which was corrected by fixing the loop
+        count. A trainer playback issue caused by the timer implementation was also
+        identified and corrected.
+      </p>
+
+      <!--
+        VIDEO PLACEHOLDER
+        Recommended video: "Real Cube Testing Video" from the original report.
+        This is particularly valuable because it demonstrates the generated
+        software moves being applied to a physical Rubik's Cube.
+      -->
+      <div class="media-placeholder video-placeholder">
+        <div>
+          <strong>VIDEO PLACEHOLDER: Real Cube Testing Video</strong><br />
+          Replace this box with the physical Rubik's Cube validation video.
+          <br /><br />
+          This should sit near the end of the page as evidence that the software's
+          generated moves correspond to a real cube.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What I Learned</h2>
+      <p>
+        This project developed my understanding of algorithm design, state
+        representation and object-oriented programming. Building the solver also
+        required thinking carefully about how a heuristic can make a search problem
+        practical rather than relying on brute-force exploration.
+      </p>
+
+      <p>
+        The rendering system gave me experience translating a mathematical model
+        into a visual interface, while the database and testing work reinforced the
+        importance of separating application functionality from persistent data and
+        validating individual features systematically.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>If I Did It Again...</h2>
+      <p>
+        The next major improvement would be a fully interactive 3D cube using a
+        graphics library, allowing users to manipulate the cube naturally with
+        mouse controls and animated rotations.
+      </p>
+
+      <p>
+        I would also explore connecting the software to a physical cube using
+        sensors, allowing real cube states to be detected automatically and fed
+        directly into the solver and trainer.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Project Report</h2> 
+      <iframe
+        src="./assets/AlevelNEAProjectReport.pdf"
+        class="pdf-embed"
+        allow="fullscreen">
+      </iframe>
+
+      <p>
+        <a
+          href="./assets/AlevelNEAProjectReport.pdf"
+          class="link"
+          target="_blank"
+          rel="noopener noreferrer">
+          View / Download Project Report →
+        </a>
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>GitHub Repository</h2>
+      <!-- Replace the URL once the repository is uploaded. -->
+      <a
+        href="https://github.com/LiamShortDev"
+        target="_blank"
+        class="link"
+        rel="noopener noreferrer">
+        View the Code on GitHub →
+      </a>
+    </section>
+
+    <a href="../index.html" style="display: inline-block; margin-top: 2rem;">
+      ← Back to Portfolio
+    </a>
+
+  </main>
+</body>
+</html>

@@ -27,7 +27,7 @@
     ],
     "description": "Timer and algorithm tracker for Rubik’s Cube practice.",
     "image": "thumbnails/cube-thumb.jpg",
-    "link": "projects/project-cubetrainer.html"
+    "link": "projects/project-rubiks-cube-solver.html"
   },
   {
     "title": "Grimrr",
@@ -41,8 +41,7 @@
   {
     "title": "Cellular Physics Sandbox",
     "category": [
-      "cs",
-      "highlighted"
+      "cs"
     ],
     "description": "Console sandbox with fluid simulation and touch control",
     "image": "thumbnails/sandsim-thumb.jpg",
@@ -52,7 +51,8 @@
     "title": "Acrylic Weather Display",
     "category": [
       "uni-1st-year",
-      "engineering"
+      "engineering",
+      "highlighted"
     ],
     "description": "ESP32-based weather display in a laser-cut acrylic case, covering PCB, CAD, and sustainability analysis.",
     "image": "projects/assets/WeatherDisplayFinal.jpg",
@@ -199,5 +199,25 @@
     "description": "First-year PCB design project covering schematic capture, layout, and design rule checks.",
     "image": "projects/assets/550226-Screenshot 2026-04-17 161650.png",
     "link": "projects/project-y1-pcb-design-skill.html"
+  },
+  {
+    "title": "2D Fluid Simulation",
+    "category": [
+      "cs",
+      "highlighted"
+    ],
+    "description": "Vector field-based fluid simulation in C# with interactive controls and GPU acceleration.",
+    "image": "thumbnails/fluidsim-thumb.png",
+    "link": "projects/project-fluid-sim.html"
+  },
+  {
+    "title": "2 Stroke Engine CAD Model",
+    "category": [
+      "engineering",
+      "highlighted"
+    ],
+    "description": "2 Stroke, 4 Cylinder engine modelled in Autodesk Inventor, with a focus on assembly and motion. Based on a challenge found online.",
+    "image": "projects/assets/InlineEngineDemo.gif",
+    "link": "projects/project-engine-model.html"
   }
 ]
